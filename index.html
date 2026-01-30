@@ -57,13 +57,17 @@
 <body class="bg-slate-50 text-slate-800 antialiased">
 
     <!-- Navigation -->
+    <!-- Modified: Mobile padding px-6 (24px), Desktop px-8 -->
     <nav class="fixed w-full z-50 bg-slate-900/95 backdrop-blur-md border-b border-slate-700">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
-                    <!-- Logo Icon (Abstract Bunker) -->
-                    <div class="w-8 h-8 bg-blue-600 rounded flex items-center justify-center text-white font-bold">B</div>
-                    <span class="font-eng font-bold text-2xl text-white tracking-wider">BNB <span class="text-blue-500">GOLF</span></span>
+                <!-- Logo with Link to Top -->
+                <div class="flex-shrink-0">
+                    <a href="#" class="flex items-center gap-2 cursor-pointer group">
+                        <!-- Logo Icon (Abstract Bunker) -->
+                        <div class="w-8 h-8 bg-blue-600 rounded flex items-center justify-center text-white font-bold group-hover:bg-blue-500 transition">B</div>
+                        <span class="font-eng font-bold text-2xl text-white tracking-wider">BNB <span class="text-blue-500 group-hover:text-blue-400 transition">GOLF</span></span>
+                    </a>
                 </div>
                 
                 <!-- Desktop Menu -->
@@ -81,31 +85,45 @@
                 <!-- Mobile menu button -->
                 <div class="-mr-2 flex md:hidden">
                     <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-white hover:bg-slate-700 focus:outline-none" aria-controls="mobile-menu" aria-expanded="false">
-                        <i class="fas fa-bars text-xl"></i>
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars text-xl" id="menu-icon"></i>
                     </button>
                 </div>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div class="hidden md:hidden bg-slate-900 border-t border-slate-800 absolute w-full left-0 top-20 shadow-xl" id="mobile-menu">
+            <div class="px-6 pt-2 pb-6 space-y-2">
+                <a href="#tech" class="block px-3 py-3 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800 font-eng" onclick="closeMobileMenu()">TECHNOLOGY</a>
+                <a href="#products" class="block px-3 py-3 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800 font-eng" onclick="closeMobileMenu()">PRODUCTS</a>
+                <a href="#details" class="block px-3 py-3 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800 font-eng" onclick="closeMobileMenu()">DETAILS</a>
+                <a href="#contact" class="block w-full text-center mt-6 bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-lg text-base font-bold transition-all shadow-lg" onclick="closeMobileMenu()">
+                    견적 문의 하기
+                </a>
             </div>
         </div>
     </nav>
 
     <!-- Hero Section (Modified Layout) -->
+    <!-- Modified: Mobile padding px-6 (24px), Desktop px-8 -->
     <header class="relative hero-bg min-h-screen flex items-center justify-center pt-24 pb-12 md:pb-32">
-        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
+        <div class="relative max-w-7xl mx-auto px-6 lg:px-8 text-center z-10">
             <div class="inline-block mb-6 px-4 py-1 rounded-full border border-blue-500/50 bg-blue-500/10 backdrop-blur-sm fade-in-up">
                 <span class="text-blue-400 font-bold text-xs tracking-widest uppercase">The Standard of Bunker Mat</span>
             </div>
             
-            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-8 leading-tight fade-in-up delay-100">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-8 leading-normal fade-in-up delay-100">
                 스크린을 넘어,<br>
                 <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-sky-200">리얼 벙커를 경험하다</span>
             </h1>
             
-            <p class="mt-4 max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-slate-300 mb-10 font-light fade-in-up delay-200 px-4">
+            <p class="mt-4 max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-slate-300 mb-10 font-light fade-in-up delay-200">
                 국내 유일 특허 기술로 완성된 BNB 벙커매트.<br class="hidden sm:block">
                 실제 모래의 타구감과 반영구적 내구성을 약속합니다.
             </p>
             
-            <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in-up delay-300 px-4">
+            <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in-up delay-300">
                 <a href="#products" class="px-8 py-4 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition shadow-lg shadow-blue-600/40 flex items-center justify-center gap-2 w-full sm:w-auto">
                     제품 디테일 보기 <i class="fas fa-search"></i>
                 </a>
@@ -117,7 +135,7 @@
         
         <!-- Trust Indicators (Bottom Bar) -->
         <div class="absolute bottom-0 w-full bg-slate-900/80 backdrop-blur border-t border-slate-800 py-6 hidden md:block">
-            <div class="max-w-7xl mx-auto px-4 flex justify-around text-slate-400">
+            <div class="max-w-7xl mx-auto px-6 lg:px-8 flex justify-around text-slate-400">
                 <div class="flex items-center gap-3">
                     <i class="fas fa-certificate text-blue-500 text-2xl"></i>
                     <div class="text-left">
@@ -144,8 +162,9 @@
     </header>
 
     <!-- Tech Section (Labels Updated to Korean) -->
+    <!-- Modified: Mobile padding px-6 (24px), Desktop px-8 -->
     <section id="tech" class="py-24 bg-white overflow-hidden">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
                 <!-- Content -->
                 <div class="mb-12 lg:mb-0">
@@ -188,7 +207,7 @@
                             <div class="absolute inset-0 flex items-center justify-center">
                                 <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-xl text-center">
                                     <i class="fas fa-layer-group text-4xl text-blue-400 mb-3"></i>
-                                    <p class="font-bold text-white tracking-widest text-lg">특허받은 다층 구조</p>
+                                    <!-- Modified: Removed "특허받은 다층 구조" text -->
                                     <p class="text-slate-300 text-xs mt-1">기술 단면도 (Tech View)</p>
                                 </div>
                             </div>
@@ -204,8 +223,9 @@
     </section>
 
     <!-- B2B Benefit Section -->
+    <!-- Modified: Mobile padding px-6 (24px), Desktop px-8 -->
     <section id="benefit" class="py-20 bg-slate-900 text-white">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center mb-16">
                 <span class="text-blue-500 font-bold tracking-wider uppercase text-sm">For Business Partners</span>
                 <h2 class="mt-2 text-3xl md:text-4xl font-black">사장님의 고민을 해결합니다</h2>
@@ -249,8 +269,9 @@
     </section>
 
     <!-- Product Detail & Showcase (Interactive) -->
+    <!-- Modified: Mobile padding px-6 (24px), Desktop px-8 -->
     <section id="products" class="pt-24 pb-24 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center mb-12">
                 <span class="text-blue-500 font-bold text-xs uppercase tracking-widest">Detail View</span>
                 <h2 class="text-3xl font-black text-slate-900 mt-2">BNB Premium Bunker Mat</h2>
@@ -354,8 +375,9 @@
     </section>
 
     <!-- Installation Gallery (Renamed from Detail View) -->
+    <!-- Modified: Mobile padding px-6 (24px), Desktop px-8 -->
     <section class="pb-24 bg-slate-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex items-end justify-between mb-8">
                 <div>
                     <span class="text-blue-500 font-bold text-xs uppercase tracking-widest">Gallery</span>
@@ -398,8 +420,9 @@
     </section>
 
     <!-- Footer -->
+    <!-- Modified: Mobile padding px-6 (24px), Desktop px-8 -->
     <footer id="contact" class="bg-white border-t border-slate-200 pt-16 pb-8">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="md:flex md:justify-between items-start">
                 <div class="mb-8 md:mb-0 max-w-sm">
                     <div class="flex items-center gap-2 mb-4">
@@ -458,9 +481,27 @@
     <script>
         // Mobile Menu Logic
         const btn = document.querySelector('button[aria-controls="mobile-menu"]');
+        const menu = document.getElementById('mobile-menu');
+        const icon = document.getElementById('menu-icon');
+
         btn.addEventListener('click', () => {
-            alert('모바일 메뉴가 열립니다. (프로토타입)');
+            menu.classList.toggle('hidden');
+            // Optional: Toggle icon between bars and times (x)
+            if (menu.classList.contains('hidden')) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            } else {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            }
         });
+
+        // Close menu when clicking a link
+        function closeMobileMenu() {
+            menu.classList.add('hidden');
+            icon.classList.remove('fa-times');
+            icon.classList.add('fa-bars');
+        }
 
         // Image Switcher Logic
         function changeImage(element, src, labelText) {
@@ -488,4 +529,4 @@
         }
     </script>
 </body>
-</html>ㄴ
+</html>
