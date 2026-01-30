@@ -57,13 +57,12 @@
 <body class="bg-slate-50 text-slate-800 antialiased">
 
     <!-- Navigation -->
-    <!-- Modified: Mobile padding px-6 (24px), Desktop px-8 -->
     <nav class="fixed w-full z-50 bg-slate-900/95 backdrop-blur-md border-b border-slate-700">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                <!-- Logo with Link to Top -->
+                <!-- Logo with Link to Top (Modified: Added onclick for smooth scroll to top) -->
                 <div class="flex-shrink-0">
-                    <a href="#" class="flex items-center gap-2 cursor-pointer group">
+                    <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="flex items-center gap-2 cursor-pointer group">
                         <!-- Logo Icon (Abstract Bunker) -->
                         <div class="w-8 h-8 bg-blue-600 rounded flex items-center justify-center text-white font-bold group-hover:bg-blue-500 transition">B</div>
                         <span class="font-eng font-bold text-2xl text-white tracking-wider">BNB <span class="text-blue-500 group-hover:text-blue-400 transition">GOLF</span></span>
@@ -105,8 +104,7 @@
         </div>
     </nav>
 
-    <!-- Hero Section (Modified Layout) -->
-    <!-- Modified: Mobile padding px-6 (24px), Desktop px-8 -->
+    <!-- Hero Section -->
     <header class="relative hero-bg min-h-screen flex items-center justify-center pt-24 pb-12 md:pb-32">
         <div class="relative max-w-7xl mx-auto px-6 lg:px-8 text-center z-10">
             <div class="inline-block mb-6 px-4 py-1 rounded-full border border-blue-500/50 bg-blue-500/10 backdrop-blur-sm fade-in-up">
@@ -161,8 +159,7 @@
         </div>
     </header>
 
-    <!-- Tech Section (Labels Updated to Korean) -->
-    <!-- Modified: Mobile padding px-6 (24px), Desktop px-8 -->
+    <!-- Tech Section -->
     <section id="tech" class="py-24 bg-white overflow-hidden">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
@@ -197,20 +194,14 @@
                     </div>
                 </div>
                 
-                <!-- Image/Visual with Korean Labels -->
+                <!-- Image/Visual -->
                 <div class="relative">
                     <div class="absolute inset-0 bg-blue-200 rounded-3xl transform rotate-3 scale-95 opacity-30"></div>
                     <div class="relative bg-slate-900 rounded-2xl shadow-2xl overflow-hidden border border-slate-700">
                         <!-- Technical Diagram -->
                         <div class="aspect-w-4 aspect-h-3 bg-slate-800 relative group">
                             <img src="https://images.unsplash.com/photo-1535132011086-b8818f016104?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Tech Layer" class="object-cover w-full h-full opacity-60 group-hover:scale-105 transition duration-500">
-                            <div class="absolute inset-0 flex items-center justify-center">
-                                <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-xl text-center">
-                                    <i class="fas fa-layer-group text-4xl text-blue-400 mb-3"></i>
-                                    <!-- Modified: Removed "특허받은 다층 구조" text -->
-                                    <p class="text-slate-300 text-xs mt-1">기술 단면도 (Tech View)</p>
-                                </div>
-                            </div>
+                            <!-- Modified: Removed the text box overlay entirely -->
                             <div class="absolute top-4 left-4 text-xs font-mono text-blue-400">
                                 <p>SCALE: 1:1</p>
                                 <p>MAT-ID: BNB-2026</p>
@@ -223,7 +214,6 @@
     </section>
 
     <!-- B2B Benefit Section -->
-    <!-- Modified: Mobile padding px-6 (24px), Desktop px-8 -->
     <section id="benefit" class="py-20 bg-slate-900 text-white">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center mb-16">
@@ -269,7 +259,6 @@
     </section>
 
     <!-- Product Detail & Showcase (Interactive) -->
-    <!-- Modified: Mobile padding px-6 (24px), Desktop px-8 -->
     <section id="products" class="pt-24 pb-24 bg-slate-50">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center mb-12">
@@ -375,7 +364,6 @@
     </section>
 
     <!-- Installation Gallery (Renamed from Detail View) -->
-    <!-- Modified: Mobile padding px-6 (24px), Desktop px-8 -->
     <section class="pb-24 bg-slate-50">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex items-end justify-between mb-8">
@@ -419,46 +407,106 @@
         </div>
     </section>
 
+    <!-- Modified: New Location Section -->
+    <section id="location" class="py-24 bg-white border-t border-slate-100">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-blue-500 font-bold tracking-wider uppercase text-sm">Location</span>
+                <h2 class="mt-2 text-3xl font-black text-slate-900">오시는 길</h2>
+            </div>
+            
+            <!-- Modified: Removed map, centered address info -->
+            <div class="max-w-2xl mx-auto">
+                <div class="bg-slate-50 rounded-2xl p-8 border border-slate-100 shadow-sm">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-bold text-slate-900 mb-4">BNB GOLF 본사</h3>
+                        <p class="text-slate-500 leading-relaxed">
+                            스크린 골프 창업, 벙커 매트 시공 관련 문의는 언제든 환영합니다.<br>
+                            쇼룸을 방문하시면 직접 시타해보실 수 있습니다.
+                        </p>
+                    </div>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start gap-4 p-4 bg-white rounded-xl border border-slate-200 shadow-sm">
+                            <div class="w-10 h-10 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-map"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">주소</h4>
+                                <p class="text-slate-500 text-sm mt-1">경기도 OO시 OO구 OO로 123, BNB 타워 5층</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4 p-4 bg-white rounded-xl border border-slate-200 shadow-sm">
+                            <div class="w-10 h-10 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-subway"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">대중교통</h4>
+                                <p class="text-slate-500 text-sm mt-1">지하철 2호선 OO역 3번 출구 도보 5분</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start gap-4 p-4 bg-white rounded-xl border border-slate-200 shadow-sm">
+                            <div class="w-10 h-10 rounded-full bg-blue-50 text-blue-600 flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-slate-900">연락처</h4>
+                                <p class="text-slate-500 text-sm mt-1">02-1234-5678 (운영시간: 평일 09:00 - 18:00)</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 text-center">
+                        <a href="https://map.kakao.com" target="_blank" class="inline-flex items-center text-blue-600 font-bold hover:text-blue-800 transition">
+                            <i class="fas fa-map-marked-alt mr-2"></i> 지도 앱에서 보기
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
-    <!-- Modified: Mobile padding px-6 (24px), Desktop px-8 -->
-    <footer id="contact" class="bg-white border-t border-slate-200 pt-16 pb-8">
+    <footer id="contact" class="bg-slate-900 border-t border-slate-800 pt-16 pb-8 text-white">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="md:flex md:justify-between items-start">
                 <div class="mb-8 md:mb-0 max-w-sm">
                     <div class="flex items-center gap-2 mb-4">
-                        <div class="w-6 h-6 bg-slate-900 rounded flex items-center justify-center text-white text-xs font-bold">B</div>
-                        <span class="font-eng font-bold text-xl text-slate-900">BNB GOLF</span>
+                        <div class="w-6 h-6 bg-white rounded flex items-center justify-center text-slate-900 text-xs font-bold">B</div>
+                        <span class="font-eng font-bold text-xl text-white">BNB GOLF</span>
                     </div>
-                    <p class="text-slate-500 text-sm leading-relaxed">
+                    <p class="text-slate-400 text-sm leading-relaxed">
                         대한민국 스크린 골프 벙커 매트의 표준.<br>
                         끊임없는 연구 개발로 필드의 감동을 실내로 가져옵니다.
                     </p>
                 </div>
                 <div class="grid grid-cols-2 gap-12 text-sm">
                     <div>
-                        <h4 class="font-bold text-slate-900 uppercase mb-4">Contact Us</h4>
-                        <ul class="space-y-3 text-slate-600">
-                            <li><i class="fas fa-phone mr-2 text-slate-400"></i> 02-1234-5678</li>
-                            <li><i class="fas fa-envelope mr-2 text-slate-400"></i> sales@bnbgolf.com</li>
-                            <li><i class="fas fa-clock mr-2 text-slate-400"></i> Mon-Fri 09:00 - 18:00</li>
+                        <h4 class="font-bold text-white uppercase mb-4">Contact Us</h4>
+                        <ul class="space-y-3 text-slate-400">
+                            <li><i class="fas fa-phone mr-2 text-slate-500"></i> 02-1234-5678</li>
+                            <li><i class="fas fa-envelope mr-2 text-slate-500"></i> sales@bnbgolf.com</li>
+                            <li><i class="fas fa-clock mr-2 text-slate-500"></i> Mon-Fri 09:00 - 18:00</li>
                         </ul>
                     </div>
                     <div>
-                        <h4 class="font-bold text-slate-900 uppercase mb-4">Company</h4>
-                        <ul class="space-y-3 text-slate-600">
-                            <li><a href="#" class="hover:text-blue-600">About Us</a></li>
-                            <li><a href="#" class="hover:text-blue-600">Technology</a></li>
-                            <li><a href="#" class="hover:text-blue-600">Privacy Policy</a></li>
+                        <h4 class="font-bold text-white uppercase mb-4">Company</h4>
+                        <ul class="space-y-3 text-slate-400">
+                            <li><a href="#" class="hover:text-blue-400">About Us</a></li>
+                            <li><a href="#" class="hover:text-blue-400">Technology</a></li>
+                            <li><a href="#" class="hover:text-blue-400">Privacy Policy</a></li>
                         </ul>
                     </div>
                 </div>
             </div>
-            <div class="mt-12 pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center">
-                <p class="text-slate-400 text-xs">© 2026 BNB GOLF Company. All rights reserved.</p>
+            <div class="mt-12 pt-8 border-t border-slate-800 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-slate-500 text-xs">© 2026 BNB GOLF Company. All rights reserved.</p>
                 <div class="flex space-x-4 mt-4 md:mt-0">
-                    <a href="#" class="text-slate-400 hover:text-slate-600"><i class="fab fa-instagram text-xl"></i></a>
-                    <a href="#" class="text-slate-400 hover:text-slate-600"><i class="fab fa-facebook text-xl"></i></a>
-                    <a href="#" class="text-slate-400 hover:text-slate-600"><i class="fab fa-youtube text-xl"></i></a>
+                    <a href="#" class="text-slate-500 hover:text-white"><i class="fab fa-instagram text-xl"></i></a>
+                    <a href="#" class="text-slate-500 hover:text-white"><i class="fab fa-facebook text-xl"></i></a>
+                    <a href="#" class="text-slate-500 hover:text-white"><i class="fab fa-youtube text-xl"></i></a>
                 </div>
             </div>
         </div>
@@ -479,6 +527,11 @@
 
     <!-- Script for Interactivity -->
     <script>
+        // Force scroll to top on load (Modified: Added new logic)
+        window.onbeforeunload = function () {
+            window.scrollTo(0, 0);
+        }
+        
         // Mobile Menu Logic
         const btn = document.querySelector('button[aria-controls="mobile-menu"]');
         const menu = document.getElementById('mobile-menu');
