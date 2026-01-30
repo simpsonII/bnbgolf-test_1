@@ -74,7 +74,7 @@
                     <div class="ml-10 flex items-baseline space-x-8">
                         <a href="#tech" class="font-eng text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800 px-3 py-2 rounded-md transition-all">TECHNOLOGY</a>
                         <a href="#products" class="font-eng text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800 px-3 py-2 rounded-md transition-all">PRODUCTS</a>
-                        <a href="#details" class="font-eng text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800 px-3 py-2 rounded-md transition-all">DETAILS</a>
+                        <a href="#location" class="font-eng text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800 px-3 py-2 rounded-md transition-all">LOCATION</a>
                         <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full text-sm font-bold transition-all shadow-lg shadow-blue-500/30">
                             견적 문의
                         </a>
@@ -96,7 +96,7 @@
             <div class="px-6 pt-2 pb-6 space-y-2">
                 <a href="#tech" class="block px-3 py-3 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800 font-eng" onclick="closeMobileMenu()">TECHNOLOGY</a>
                 <a href="#products" class="block px-3 py-3 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800 font-eng" onclick="closeMobileMenu()">PRODUCTS</a>
-                <a href="#details" class="block px-3 py-3 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800 font-eng" onclick="closeMobileMenu()">DETAILS</a>
+                <a href="#location" class="block px-3 py-3 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800 font-eng" onclick="closeMobileMenu()">LOCATION</a>
                 <a href="#contact" class="block w-full text-center mt-6 bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-lg text-base font-bold transition-all shadow-lg" onclick="closeMobileMenu()">
                     견적 문의 하기
                 </a>
@@ -459,8 +459,9 @@
                     </div>
 
                     <div class="mt-8 text-center">
-                        <a href="https://map.kakao.com" target="_blank" class="inline-flex items-center text-blue-600 font-bold hover:text-blue-800 transition">
-                            <i class="fas fa-map-marked-alt mr-2"></i> 지도 앱에서 보기
+                        <!-- Modified: Changed link to Naver Map -->
+                        <a href="https://map.naver.com" target="_blank" class="inline-flex items-center text-green-600 font-bold hover:text-green-800 transition">
+                            <i class="fas fa-map-marked-alt mr-2"></i> 네이버 지도 앱에서 보기
                         </a>
                     </div>
                 </div>
@@ -527,11 +528,17 @@
 
     <!-- Script for Interactivity -->
     <script>
-        // Force scroll to top on load (Modified: Added new logic)
-        window.onbeforeunload = function () {
-            window.scrollTo(0, 0);
+        // Force scroll to top on load (Modified: Robust logic for mobile)
+        // 브라우저의 자동 스크롤 복원 기능을 비활성화하여 항상 맨 위에서 시작하도록 설정
+        if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
         }
         
+        // 페이지 로드 시 즉시 최상단으로 이동
+        window.onload = function() {
+            window.scrollTo(0, 0);
+        }
+
         // Mobile Menu Logic
         const btn = document.querySelector('button[aria-controls="mobile-menu"]');
         const menu = document.getElementById('mobile-menu');
