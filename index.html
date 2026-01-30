@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BNB GOLF - Premium Bunker Mat</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Noto Sans KR', sans-serif; }
+        .font-eng { font-family: 'Montserrat', sans-serif; }
+        
+        /* Hero Section Background */
+        .hero-bg {
+            background-image: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.7)), url('https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed; /* Parallax Effect */
+        }
+        
+        /* Mobile background fix */
+        @media (max-width: 768px) {
+            .hero-bg {
+                background-attachment: scroll;
+            }
+        }
+
+        /* Smooth Scroll */
+        html { scroll-behavior: smooth; }
+
+        /* Animation Utilities */
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Thumbnail Active State */
+        .thumb-active {
+            border-color: #3b82f6; /* Blue-500 */
+            opacity: 1 !important;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-slate-900/95 backdrop-blur-md border-b border-slate-700">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+                    <!-- Logo Icon (Abstract Bunker) -->
+                    <div class="w-8 h-8 bg-blue-600 rounded flex items-center justify-center text-white font-bold">B</div>
+                    <span class="font-eng font-bold text-2xl text-white tracking-wider">BNB <span class="text-blue-500">GOLF</span></span>
+                </div>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="#tech" class="font-eng text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800 px-3 py-2 rounded-md transition-all">TECHNOLOGY</a>
+                        <a href="#products" class="font-eng text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800 px-3 py-2 rounded-md transition-all">PRODUCTS</a>
+                        <a href="#details" class="font-eng text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800 px-3 py-2 rounded-md transition-all">DETAILS</a>
+                        <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full text-sm font-bold transition-all shadow-lg shadow-blue-500/30">
+                            견적 문의
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Mobile menu button -->
+                <div class="-mr-2 flex md:hidden">
+                    <button type="button" class="inline-flex items-center justify-center p-2 rounded-md text-slate-400 hover:text-white hover:bg-slate-700 focus:outline-none" aria-controls="mobile-menu" aria-expanded="false">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section (Modified Layout) -->
+    <header class="relative hero-bg min-h-screen flex items-center justify-center pt-24 pb-12 md:pb-32">
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center z-10">
+            <div class="inline-block mb-6 px-4 py-1 rounded-full border border-blue-500/50 bg-blue-500/10 backdrop-blur-sm fade-in-up">
+                <span class="text-blue-400 font-bold text-xs tracking-widest uppercase">The Standard of Bunker Mat</span>
+            </div>
+            
+            <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black text-white mb-8 leading-tight fade-in-up delay-100">
+                스크린을 넘어,<br>
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-sky-200">리얼 벙커를 경험하다</span>
+            </h1>
+            
+            <p class="mt-4 max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-slate-300 mb-10 font-light fade-in-up delay-200 px-4">
+                국내 유일 특허 기술로 완성된 BNB 벙커매트.<br class="hidden sm:block">
+                실제 모래의 타구감과 반영구적 내구성을 약속합니다.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in-up delay-300 px-4">
+                <a href="#products" class="px-8 py-4 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition shadow-lg shadow-blue-600/40 flex items-center justify-center gap-2 w-full sm:w-auto">
+                    제품 디테일 보기 <i class="fas fa-search"></i>
+                </a>
+                <a href="#tech" class="px-8 py-4 border border-slate-500 text-slate-300 font-bold rounded-lg hover:bg-white hover:text-slate-900 transition flex items-center justify-center gap-2 backdrop-blur-sm w-full sm:w-auto">
+                    기술력 확인하기
+                </a>
+            </div>
+        </div>
+        
+        <!-- Trust Indicators (Bottom Bar) -->
+        <div class="absolute bottom-0 w-full bg-slate-900/80 backdrop-blur border-t border-slate-800 py-6 hidden md:block">
+            <div class="max-w-7xl mx-auto px-4 flex justify-around text-slate-400">
+                <div class="flex items-center gap-3">
+                    <i class="fas fa-certificate text-blue-500 text-2xl"></i>
+                    <div class="text-left">
+                        <p class="text-xs font-bold text-slate-500 uppercase">Patent</p>
+                        <p class="text-sm text-white font-bold">특허 제 10-XXXX호 보유</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <i class="fas fa-shield-alt text-blue-500 text-2xl"></i>
+                    <div class="text-left">
+                        <p class="text-xs font-bold text-slate-500 uppercase">Durability</p>
+                        <p class="text-sm text-white font-bold">기존 매트 대비 300% 내구성</p>
+                    </div>
+                </div>
+                <div class="flex items-center gap-3">
+                    <i class="fas fa-check-circle text-blue-500 text-2xl"></i>
+                    <div class="text-left">
+                        <p class="text-xs font-bold text-slate-500 uppercase">Material</p>
+                        <p class="text-sm text-white font-bold">KC 인증 친환경 소재</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Tech Section (Labels Updated to Korean) -->
+    <section id="tech" class="py-24 bg-white overflow-hidden">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
+                <!-- Content -->
+                <div class="mb-12 lg:mb-0">
+                    <h2 class="font-eng text-blue-600 font-bold tracking-wide uppercase text-sm mb-2">Our Technology</h2>
+                    <h3 class="text-3xl md:text-4xl font-black text-slate-900 mb-6 leading-tight">
+                        모방할 수 없는<br>
+                        이중 충격 흡수 구조
+                    </h3>
+                    <p class="text-lg text-slate-600 mb-8 leading-relaxed">
+                        BNB GOLF는 단순히 흉내만 낸 매트가 아닙니다. 
+                        수천 번의 테스트를 거쳐 개발된 독자적인 레이어 구조는 
+                        클럽이 닿는 순간 실제 모래와 가장 유사한 저항감을 만들어냅니다.
+                    </p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold">01</div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-bold text-slate-900">충격 분산 레이어</h4>
+                                <p class="mt-1 text-slate-600 text-sm">타격 시 손목에 전해지는 충격을 획기적으로 줄여 부상을 방지합니다.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start">
+                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold">02</div>
+                            <div class="ml-4">
+                                <h4 class="text-lg font-bold text-slate-900">특수 강화 섬유</h4>
+                                <p class="mt-1 text-slate-600 text-sm">일반 나일론 대비 3배 강한 내구성으로 마모와 찢어짐에 강합니다.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Image/Visual with Korean Labels -->
+                <div class="relative">
+                    <div class="absolute inset-0 bg-blue-200 rounded-3xl transform rotate-3 scale-95 opacity-30"></div>
+                    <div class="relative bg-slate-900 rounded-2xl shadow-2xl overflow-hidden border border-slate-700">
+                        <!-- Technical Diagram -->
+                        <div class="aspect-w-4 aspect-h-3 bg-slate-800 relative group">
+                            <img src="https://images.unsplash.com/photo-1535132011086-b8818f016104?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Tech Layer" class="object-cover w-full h-full opacity-60 group-hover:scale-105 transition duration-500">
+                            <div class="absolute inset-0 flex items-center justify-center">
+                                <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-xl text-center">
+                                    <i class="fas fa-layer-group text-4xl text-blue-400 mb-3"></i>
+                                    <p class="font-bold text-white tracking-widest text-lg">특허받은 다층 구조</p>
+                                    <p class="text-slate-300 text-xs mt-1">기술 단면도 (Tech View)</p>
+                                </div>
+                            </div>
+                            <div class="absolute top-4 left-4 text-xs font-mono text-blue-400">
+                                <p>SCALE: 1:1</p>
+                                <p>MAT-ID: BNB-2026</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- B2B Benefit Section -->
+    <section id="benefit" class="py-20 bg-slate-900 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16">
+                <span class="text-blue-500 font-bold tracking-wider uppercase text-sm">For Business Partners</span>
+                <h2 class="mt-2 text-3xl md:text-4xl font-black">사장님의 고민을 해결합니다</h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Card 1 -->
+                <div class="group bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-blue-500 transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-slate-700 rounded-lg flex items-center justify-center text-2xl text-blue-400 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <i class="fas fa-coins"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">유지비용 50% 절감</h3>
+                    <p class="text-slate-400 leading-relaxed text-sm">
+                        반영구적인 내구성으로 교체 주기가 획기적으로 늘어납니다. 매년 발생하는 소모품 비용을 아끼세요.
+                    </p>
+                </div>
+
+                <!-- Card 2 -->
+                <div class="group bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-blue-500 transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-slate-700 rounded-lg flex items-center justify-center text-2xl text-blue-400 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <i class="fas fa-broom"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">가루 날림 Zero</h3>
+                    <p class="text-slate-400 leading-relaxed text-sm">
+                        기존 매트의 단점인 부스러기와 먼지가 발생하지 않습니다. 언제나 쾌적한 룸 컨디션을 유지하세요.
+                    </p>
+                </div>
+
+                <!-- Card 3 -->
+                <div class="group bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-blue-500 transition-all duration-300 hover:-translate-y-2">
+                    <div class="w-14 h-14 bg-slate-700 rounded-lg flex items-center justify-center text-2xl text-blue-400 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">재방문율 상승</h3>
+                    <p class="text-slate-400 leading-relaxed text-sm">
+                        "손맛이 다르다"는 고객의 피드백. 압도적인 타구감은 고객을 다시 찾아오게 만드는 가장 큰 무기입니다.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Detail & Showcase (Interactive) -->
+    <section id="products" class="pt-24 pb-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-blue-500 font-bold text-xs uppercase tracking-widest">Detail View</span>
+                <h2 class="text-3xl font-black text-slate-900 mt-2">BNB Premium Bunker Mat</h2>
+                <p class="mt-4 text-slate-500">제품의 디테일을 클릭하여 확인하세요.</p>
+            </div>
+
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100 flex flex-col lg:flex-row h-auto lg:h-[600px]">
+                
+                <!-- Left: Interactive Image Gallery -->
+                <div class="lg:w-3/5 bg-slate-100 p-6 flex flex-col">
+                    <!-- Main Image Display -->
+                    <div class="flex-1 bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 relative mb-4 group">
+                        <img id="mainProductImage" src="https://images.unsplash.com/photo-1593111774240-d529f12db464?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Main View" class="w-full h-full object-cover transition duration-500 transform group-hover:scale-105 cursor-zoom-in">
+                        <div class="absolute bottom-4 left-4 bg-black/60 text-white px-3 py-1 rounded-full text-xs font-bold backdrop-blur-sm" id="imageLabel">
+                            전체 모습 (Front View)
+                        </div>
+                    </div>
+                    
+                    <!-- Thumbnails List -->
+                    <div class="flex gap-3 h-24 overflow-x-auto pb-2">
+                        <!-- Thumb 1 -->
+                        <button onclick="changeImage(this, 'https://images.unsplash.com/photo-1593111774240-d529f12db464?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80', '전체 모습 (Front View)')" class="w-24 flex-shrink-0 rounded-lg overflow-hidden border-2 border-blue-500 thumb-active transition hover:opacity-100 opacity-70">
+                            <img src="https://images.unsplash.com/photo-1593111774240-d529f12db464?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" class="w-full h-full object-cover">
+                        </button>
+                        <!-- Thumb 2 (Side/Thickness) -->
+                        <button onclick="changeImage(this, 'https://images.unsplash.com/photo-1615114814213-a245ffc79e9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80', '측면 두께 (Side Profile)')" class="w-24 flex-shrink-0 rounded-lg overflow-hidden border-2 border-transparent hover:border-blue-300 transition hover:opacity-100 opacity-70">
+                            <img src="https://images.unsplash.com/photo-1615114814213-a245ffc79e9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" class="w-full h-full object-cover">
+                        </button>
+                        <!-- Thumb 3 (Texture) -->
+                        <button onclick="changeImage(this, 'https://images.unsplash.com/photo-1519226612673-73c0234437ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80', '표면 텍스처 (Texture Detail)')" class="w-24 flex-shrink-0 rounded-lg overflow-hidden border-2 border-transparent hover:border-blue-300 transition hover:opacity-100 opacity-70">
+                            <img src="https://images.unsplash.com/photo-1519226612673-73c0234437ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" class="w-full h-full object-cover">
+                        </button>
+                        <!-- Thumb 4 (Backside) -->
+                        <button onclick="changeImage(this, 'https://images.unsplash.com/photo-1622359560389-91a0c7c8f292?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80', '후면 마감 (Backside)')" class="w-24 flex-shrink-0 rounded-lg overflow-hidden border-2 border-transparent hover:border-blue-300 transition hover:opacity-100 opacity-70">
+                            <img src="https://images.unsplash.com/photo-1622359560389-91a0c7c8f292?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" class="w-full h-full object-cover">
+                        </button>
+                    </div>
+                </div>
+                
+                <!-- Right: Product Detail Info -->
+                <div class="lg:w-2/5 p-8 lg:p-12 flex flex-col overflow-y-auto">
+                    <div class="mb-auto">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-blue-100 text-blue-700 text-xs font-bold px-2 py-1 rounded uppercase">Premium Line</span>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+                            </div>
+                        </div>
+                        <h3 class="text-3xl font-bold text-slate-900 mb-2">BNB 벙커매트 Pro</h3>
+                        <p class="text-slate-500 text-sm mb-6 leading-relaxed">
+                            필드의 감각을 완벽하게 재현한 프리미엄 모델. 
+                            특수 레이어 공법으로 충격을 흡수하고, 반영구적인 내구성을 제공합니다.
+                        </p>
+
+                        <!-- Detail Specs Accordion Style List -->
+                        <div class="space-y-4 border-t border-slate-100 pt-6">
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 flex-shrink-0">
+                                    <i class="fas fa-ruler-combined"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 text-sm">최적화된 규격 (Size)</h4>
+                                    <p class="text-xs text-slate-500 mt-1">1000mm x 1000mm (표준) / 주문 제작 가능</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 flex-shrink-0">
+                                    <i class="fas fa-layer-group"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 text-sm">3중 구조 (Material)</h4>
+                                    <p class="text-xs text-slate-500 mt-1">특수 직조 섬유 + 충격 흡수 패드 + 미끄럼 방지 고무</p>
+                                </div>
+                            </div>
+                            <div class="flex items-start gap-4">
+                                <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 flex-shrink-0">
+                                    <i class="fas fa-weight-hanging"></i>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-slate-900 text-sm">중량 및 두께 (Spec)</h4>
+                                    <p class="text-xs text-slate-500 mt-1">두께 35mm / 중량 약 5.2kg (안정적인 고정력)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8 pt-8 border-t border-slate-100">
+                        <div class="flex gap-3">
+                            <button class="flex-1 bg-slate-900 text-white font-bold py-4 rounded-xl hover:bg-slate-800 transition shadow-lg flex items-center justify-center gap-2">
+                                <span>견적서 요청하기</span> <i class="fas fa-file-invoice"></i>
+                            </button>
+                            <button class="px-5 border border-slate-200 rounded-xl hover:bg-slate-50 text-slate-600 transition flex items-center justify-center" title="브로슈어 다운로드">
+                                <i class="fas fa-download"></i>
+                            </button>
+                        </div>
+                        <p class="text-center text-xs text-slate-400 mt-3">* 대량 구매 시 추가 할인이 적용됩니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Installation Gallery (Renamed from Detail View) -->
+    <section class="pb-24 bg-slate-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-end justify-between mb-8">
+                <div>
+                    <span class="text-blue-500 font-bold text-xs uppercase tracking-widest">Gallery</span>
+                    <h3 class="text-2xl font-bold text-slate-900">설치 및 시공 사례</h3>
+                </div>
+                <a href="#" class="text-sm font-bold text-slate-500 hover:text-blue-600 transition hidden md:block">더 많은 사례 보기 <i class="fas fa-arrow-right ml-1"></i></a>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="group relative aspect-square bg-white rounded-xl overflow-hidden cursor-pointer shadow-md">
+                    <img src="https://images.unsplash.com/photo-1599394022918-6c2776530abb?auto=format&fit=crop&w=600&q=80" class="object-cover w-full h-full group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-4">
+                        <span class="text-white font-bold text-sm">VIP 룸 시공</span>
+                        <span class="text-slate-300 text-xs">서울 강남점</span>
+                    </div>
+                </div>
+                <div class="group relative aspect-square bg-white rounded-xl overflow-hidden cursor-pointer shadow-md">
+                    <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=600&q=80" class="object-cover w-full h-full group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-4">
+                        <span class="text-white font-bold text-sm">연습장 타석</span>
+                        <span class="text-slate-300 text-xs">경기 용인점</span>
+                    </div>
+                </div>
+                <div class="group relative aspect-square bg-white rounded-xl overflow-hidden cursor-pointer shadow-md">
+                    <img src="https://images.unsplash.com/photo-1565528033285-e362c3d52c20?auto=format&fit=crop&w=600&q=80" class="object-cover w-full h-full group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-4">
+                        <span class="text-white font-bold text-sm">개인 주택</span>
+                        <span class="text-slate-300 text-xs">제주 타운하우스</span>
+                    </div>
+                </div>
+                <div class="group relative aspect-square bg-white rounded-xl overflow-hidden cursor-pointer shadow-md">
+                    <img src="https://images.unsplash.com/photo-1592657385566-6415f94b83f4?auto=format&fit=crop&w=600&q=80" class="object-cover w-full h-full group-hover:scale-110 transition duration-500">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-4">
+                        <span class="text-white font-bold text-sm">프랜차이즈</span>
+                        <span class="text-slate-300 text-xs">전국 50호점 납품</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-white border-t border-slate-200 pt-16 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex md:justify-between items-start">
+                <div class="mb-8 md:mb-0 max-w-sm">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-6 h-6 bg-slate-900 rounded flex items-center justify-center text-white text-xs font-bold">B</div>
+                        <span class="font-eng font-bold text-xl text-slate-900">BNB GOLF</span>
+                    </div>
+                    <p class="text-slate-500 text-sm leading-relaxed">
+                        대한민국 스크린 골프 벙커 매트의 표준.<br>
+                        끊임없는 연구 개발로 필드의 감동을 실내로 가져옵니다.
+                    </p>
+                </div>
+                <div class="grid grid-cols-2 gap-12 text-sm">
+                    <div>
+                        <h4 class="font-bold text-slate-900 uppercase mb-4">Contact Us</h4>
+                        <ul class="space-y-3 text-slate-600">
+                            <li><i class="fas fa-phone mr-2 text-slate-400"></i> 02-1234-5678</li>
+                            <li><i class="fas fa-envelope mr-2 text-slate-400"></i> sales@bnbgolf.com</li>
+                            <li><i class="fas fa-clock mr-2 text-slate-400"></i> Mon-Fri 09:00 - 18:00</li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-slate-900 uppercase mb-4">Company</h4>
+                        <ul class="space-y-3 text-slate-600">
+                            <li><a href="#" class="hover:text-blue-600">About Us</a></li>
+                            <li><a href="#" class="hover:text-blue-600">Technology</a></li>
+                            <li><a href="#" class="hover:text-blue-600">Privacy Policy</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-12 pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-slate-400 text-xs">© 2026 BNB GOLF Company. All rights reserved.</p>
+                <div class="flex space-x-4 mt-4 md:mt-0">
+                    <a href="#" class="text-slate-400 hover:text-slate-600"><i class="fab fa-instagram text-xl"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-slate-600"><i class="fab fa-facebook text-xl"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-slate-600"><i class="fab fa-youtube text-xl"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Chat Button -->
+    <div class="fixed bottom-6 right-6 z-40">
+        <button class="bg-yellow-400 hover:bg-yellow-500 text-slate-900 rounded-full p-4 shadow-xl transition-transform hover:-translate-y-1 group flex items-center gap-2 pr-6">
+            <span class="bg-white/20 p-2 rounded-full">
+                <i class="fas fa-comment text-xl"></i>
+            </span>
+            <div class="text-left">
+                <p class="text-xs font-bold opacity-70">궁금한 점이 있으신가요?</p>
+                <p class="text-sm font-black">실시간 채팅 상담</p>
+            </div>
+        </button>
+    </div>
+
+    <!-- Script for Interactivity -->
+    <script>
+        // Mobile Menu Logic
+        const btn = document.querySelector('button[aria-controls="mobile-menu"]');
+        btn.addEventListener('click', () => {
+            alert('모바일 메뉴가 열립니다. (프로토타입)');
+        });
+
+        // Image Switcher Logic
+        function changeImage(element, src, labelText) {
+            // Change Main Image
+            const mainImg = document.getElementById('mainProductImage');
+            mainImg.style.opacity = '0'; // Fade out effect
+            
+            setTimeout(() => {
+                mainImg.src = src;
+                mainImg.style.opacity = '1';
+            }, 200);
+
+            // Change Label
+            const label = document.getElementById('imageLabel');
+            label.textContent = labelText;
+
+            // Update Active State
+            const thumbnails = element.parentElement.children;
+            for (let thumb of thumbnails) {
+                thumb.classList.remove('thumb-active', 'border-blue-500');
+                thumb.classList.add('border-transparent');
+            }
+            element.classList.add('thumb-active', 'border-blue-500');
+            element.classList.remove('border-transparent');
+        }
+    </script>
+</body>
+</html>ㄴ
