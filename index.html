@@ -31,7 +31,7 @@
             background-size: cover;
             background-position: center;
             opacity: 0;
-            /* Modified: Unified transition for smooth entry and exit without snapping */
+            /* Smooth transition without snapping */
             transform: scale(1.1); 
             transition: opacity 2s ease-in-out, transform 10s linear;
         }
@@ -39,7 +39,6 @@
         .hero-slide.active {
             opacity: 1;
             transform: scale(1);
-            /* Modified: Consistent transition ensures continuous movement */
             transition: opacity 2s ease-in-out, transform 10s linear;
         }
 
@@ -64,7 +63,7 @@
         /* Smooth Scroll & Header Offset Adjustment */
         html { 
             scroll-behavior: smooth; 
-            scroll-padding-top: 6rem; /* 상단 고정 헤더에 가려지지 않도록 여백 확보 */
+            scroll-padding-top: 6rem;
         }
 
         /* Initial Hero Animations */
@@ -145,7 +144,8 @@
                         <a href="#recommend" class="font-eng text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800 px-3 py-2 rounded-md transition-all">PARTNERSHIP</a>
                         <a href="#process" class="font-eng text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800 px-3 py-2 rounded-md transition-all">PROCESS</a>
                         <a href="#products" class="font-eng text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800 px-3 py-2 rounded-md transition-all">PRODUCTS</a>
-                        <a href="#products" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full text-sm font-bold transition-all shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 transform hover:-translate-y-0.5">
+                        <!-- Link Update: Quote Request (Nav) -->
+                        <a href="quote.html" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full text-sm font-bold transition-all shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 transform hover:-translate-y-0.5">
                             견적 문의
                         </a>
                     </div>
@@ -168,14 +168,15 @@
                 <a href="#recommend" class="block px-3 py-3 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800 font-eng" onclick="closeMobileMenu()">PARTNERSHIP</a>
                 <a href="#process" class="block px-3 py-3 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800 font-eng" onclick="closeMobileMenu()">PROCESS</a>
                 <a href="#products" class="block px-3 py-3 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800 font-eng" onclick="closeMobileMenu()">PRODUCTS</a>
-                <a href="#products" class="block w-full text-center mt-6 bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-lg text-base font-bold transition-all shadow-lg" onclick="closeMobileMenu()">
+                <!-- Link Update: Quote Request (Mobile) -->
+                <a href="quote.html" class="block w-full text-center mt-6 bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-lg text-base font-bold transition-all shadow-lg">
                     견적 문의 하기
                 </a>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section (Modified: Image Slider) -->
+    <!-- Hero Section -->
     <header class="relative min-h-screen flex items-center justify-center pt-24 pb-12 md:pb-32 overflow-hidden">
         
         <!-- Background Slider -->
@@ -285,8 +286,6 @@
                             <img src="https://images.unsplash.com/photo-1535132011086-b8818f016104?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Tech Layer" class="object-cover w-full h-full opacity-60 group-hover:scale-105 transition duration-700">
                             <!-- Removed the center text box overlay -->
                             <div class="absolute top-4 left-4 text-xs font-mono text-blue-400">
-                                <p>SCALE: 1:1</p>
-                                <p>MAT-ID: BNB-2026</p>
                             </div>
                         </div>
                     </div>
@@ -400,7 +399,8 @@
                 <h2 class="text-3xl md:text-4xl font-black text-white mb-2">어떤 공간이든 100% 맞춤 제작</h2>
                 <p class="text-blue-100 text-lg">규격 외 사이즈, 특수 형태, 로고 인쇄까지. 고객님의 매장에 딱 맞게 만들어 드립니다.</p>
             </div>
-            <a href="#products" class="bg-white text-blue-600 px-8 py-4 rounded-xl font-bold hover:bg-slate-100 hover:shadow-xl hover:scale-105 transition-all duration-300 whitespace-nowrap">
+            <!-- Link Update: Custom Order Banner -->
+            <a href="quote.html" class="bg-white text-blue-600 px-8 py-4 rounded-xl font-bold hover:bg-slate-100 hover:shadow-xl hover:scale-105 transition-all duration-300 whitespace-nowrap">
                 맞춤 제작 문의하기
             </a>
         </div>
@@ -539,9 +539,10 @@
 
                     <div class="mt-8 pt-8 border-t border-slate-100">
                         <div class="flex gap-3">
-                            <button class="flex-1 bg-slate-900 text-white font-bold py-4 rounded-xl hover:bg-slate-800 transition shadow-lg hover:shadow-blue-900/30 flex items-center justify-center gap-2 transform hover:-translate-y-1">
+                            <!-- Link Update: Request Quote (Detail) -->
+                            <a href="quote.html" class="flex-1 bg-slate-900 text-white font-bold py-4 rounded-xl hover:bg-slate-800 transition shadow-lg hover:shadow-blue-900/30 flex items-center justify-center gap-2 transform hover:-translate-y-1">
                                 <span>견적서 요청하기</span> <i class="fas fa-file-invoice"></i>
-                            </button>
+                            </a>
                             <button class="px-5 border border-slate-200 rounded-xl hover:bg-slate-50 text-slate-600 transition flex items-center justify-center hover:border-slate-400" title="브로슈어 다운로드">
                                 <i class="fas fa-download"></i>
                             </button>
@@ -706,7 +707,8 @@
                             </ul>
                         </div>
                         <div class="flex-shrink-0">
-                            <a href="#products" class="inline-block bg-white text-slate-900 font-bold px-8 py-4 rounded-xl hover:bg-blue-50 transition shadow-lg transform group-hover:scale-105">
+                            <!-- Link Update: Custom Order -->
+                            <a href="quote.html" class="inline-block bg-white text-slate-900 font-bold px-8 py-4 rounded-xl hover:bg-blue-50 transition shadow-lg transform group-hover:scale-105">
                                 맞춤 견적 신청하기
                             </a>
                         </div>
@@ -767,7 +769,8 @@
                             <li>• <strong>제조국:</strong> 대한민국 (Made in Korea)</li>
                         </ul>
                     </div>
-                    <a href="#products" class="bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-xl font-bold transition shadow-lg whitespace-nowrap transform hover:scale-105">
+                    <!-- Link Update: Order Now (Spec) -->
+                    <a href="quote.html" class="bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-xl font-bold transition shadow-lg whitespace-nowrap transform hover:scale-105">
                         지금 바로 주문하기
                     </a>
                 </div>
@@ -939,7 +942,8 @@
 
     <!-- Floating Chat Button -->
     <div class="fixed bottom-6 right-6 z-40">
-        <button class="bg-yellow-400 hover:bg-yellow-500 text-slate-900 rounded-full p-4 shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group flex items-center gap-2 pr-6">
+        <!-- Link Update: Quote Request (Floating) -->
+        <a href="quote.html" class="bg-yellow-400 hover:bg-yellow-500 text-slate-900 rounded-full p-4 shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group flex items-center gap-2 pr-6">
             <span class="bg-white/20 p-2 rounded-full">
                 <i class="fas fa-comment text-xl"></i>
             </span>
@@ -947,7 +951,7 @@
                 <p class="text-xs font-bold opacity-70">궁금한 점이 있으신가요?</p>
                 <p class="text-sm font-black">실시간 채팅 상담</p>
             </div>
-        </button>
+        </a>
     </div>
 
     <!-- Script for Interactivity -->
