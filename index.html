@@ -29,7 +29,7 @@
         /* Smooth Scroll */
         html { scroll-behavior: smooth; }
 
-        /* Animation Utilities */
+        /* Initial Hero Animations */
         .fade-in-up {
             animation: fadeInUp 0.8s ease-out forwards;
             opacity: 0;
@@ -47,6 +47,24 @@
             }
         }
 
+        /* Scroll Reveal Animations (General) */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease-out;
+        }
+        
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Staggered Delays for Grid Items */
+        .delay-0 { transition-delay: 0s; }
+        .delay-100-ms { transition-delay: 0.1s; }
+        .delay-200-ms { transition-delay: 0.2s; }
+        .delay-300-ms { transition-delay: 0.3s; }
+
         /* Thumbnail Active State */
         .thumb-active {
             border-color: #3b82f6; /* Blue-500 */
@@ -57,13 +75,13 @@
 <body class="bg-slate-50 text-slate-800 antialiased">
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-slate-900/95 backdrop-blur-md border-b border-slate-700">
+    <nav class="fixed w-full z-50 bg-slate-900/95 backdrop-blur-md border-b border-slate-700 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <!-- Logo with Link to Top -->
                 <div class="flex-shrink-0">
                     <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="flex items-center gap-2 cursor-pointer group">
-                        <div class="w-8 h-8 bg-blue-600 rounded flex items-center justify-center text-white font-bold group-hover:bg-blue-500 transition">B</div>
+                        <div class="w-8 h-8 bg-blue-600 rounded flex items-center justify-center text-white font-bold group-hover:bg-blue-500 transition duration-300 transform group-hover:rotate-12">B</div>
                         <span class="font-eng font-bold text-2xl text-white tracking-wider">BNB <span class="text-blue-500 group-hover:text-blue-400 transition">GOLF</span></span>
                     </a>
                 </div>
@@ -72,9 +90,12 @@
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
                         <a href="#tech" class="font-eng text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800 px-3 py-2 rounded-md transition-all">TECHNOLOGY</a>
+                        <!-- Modified: Added PARTNERSHIP link to match content -->
+                        <a href="#recommend" class="font-eng text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800 px-3 py-2 rounded-md transition-all">PARTNERSHIP</a>
+                        <!-- Modified: Renamed HOW TO ORDER to PROCESS -->
+                        <a href="#process" class="font-eng text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800 px-3 py-2 rounded-md transition-all">PROCESS</a>
                         <a href="#products" class="font-eng text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800 px-3 py-2 rounded-md transition-all">PRODUCTS</a>
-                        <a href="#process" class="font-eng text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800 px-3 py-2 rounded-md transition-all">HOW TO ORDER</a>
-                        <a href="#products" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full text-sm font-bold transition-all shadow-lg shadow-blue-500/30">
+                        <a href="#products" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full text-sm font-bold transition-all shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 transform hover:-translate-y-0.5">
                             견적 문의
                         </a>
                     </div>
@@ -94,8 +115,11 @@
         <div class="hidden md:hidden bg-slate-900 border-t border-slate-800 absolute w-full left-0 top-20 shadow-xl" id="mobile-menu">
             <div class="px-6 pt-2 pb-6 space-y-2">
                 <a href="#tech" class="block px-3 py-3 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800 font-eng" onclick="closeMobileMenu()">TECHNOLOGY</a>
+                <!-- Modified: Added PARTNERSHIP link -->
+                <a href="#recommend" class="block px-3 py-3 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800 font-eng" onclick="closeMobileMenu()">PARTNERSHIP</a>
+                <!-- Modified: Renamed HOW TO ORDER to PROCESS -->
+                <a href="#process" class="block px-3 py-3 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800 font-eng" onclick="closeMobileMenu()">PROCESS</a>
                 <a href="#products" class="block px-3 py-3 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800 font-eng" onclick="closeMobileMenu()">PRODUCTS</a>
-                <a href="#process" class="block px-3 py-3 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800 font-eng" onclick="closeMobileMenu()">HOW TO ORDER</a>
                 <a href="#products" class="block w-full text-center mt-6 bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-lg text-base font-bold transition-all shadow-lg" onclick="closeMobileMenu()">
                     견적 문의 하기
                 </a>
@@ -106,7 +130,7 @@
     <!-- Hero Section -->
     <header class="relative hero-bg min-h-screen flex items-center justify-center pt-24 pb-12 md:pb-32">
         <div class="relative max-w-7xl mx-auto px-6 lg:px-8 text-center z-10">
-            <div class="inline-block mb-6 px-4 py-1 rounded-full border border-blue-500/50 bg-blue-500/10 backdrop-blur-sm fade-in-up">
+            <div class="inline-block mb-6 px-4 py-1 rounded-full border border-blue-500/50 bg-blue-500/10 backdrop-blur-sm fade-in-up hover:bg-blue-500/20 transition duration-300 cursor-default">
                 <span class="text-blue-400 font-bold text-xs tracking-widest uppercase">The Standard of Bunker Mat</span>
             </div>
             
@@ -121,7 +145,7 @@
             </p>
             
             <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in-up delay-300">
-                <a href="#products" class="px-8 py-4 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition shadow-lg shadow-blue-600/40 flex items-center justify-center gap-2 w-full sm:w-auto">
+                <a href="#products" class="px-8 py-4 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition shadow-lg shadow-blue-600/40 flex items-center justify-center gap-2 w-full sm:w-auto transform hover:-translate-y-1">
                     제품 디테일 보기 <i class="fas fa-search"></i>
                 </a>
                 <a href="#tech" class="px-8 py-4 border border-slate-500 text-slate-300 font-bold rounded-lg hover:bg-white hover:text-slate-900 transition flex items-center justify-center gap-2 backdrop-blur-sm w-full sm:w-auto">
@@ -133,22 +157,22 @@
         <!-- Trust Indicators (Bottom Bar) -->
         <div class="absolute bottom-0 w-full bg-slate-900/80 backdrop-blur border-t border-slate-800 py-6 hidden md:block">
             <div class="max-w-7xl mx-auto px-6 lg:px-8 flex justify-around text-slate-400">
-                <div class="flex items-center gap-3">
-                    <i class="fas fa-certificate text-blue-500 text-2xl"></i>
+                <div class="flex items-center gap-3 group cursor-default">
+                    <i class="fas fa-certificate text-blue-500 text-2xl group-hover:scale-110 transition duration-300"></i>
                     <div class="text-left">
                         <p class="text-xs font-bold text-slate-500 uppercase">Patent</p>
                         <p class="text-sm text-white font-bold">특허 제 10-XXXX호 보유</p>
                     </div>
                 </div>
-                <div class="flex items-center gap-3">
-                    <i class="fas fa-shield-alt text-blue-500 text-2xl"></i>
+                <div class="flex items-center gap-3 group cursor-default">
+                    <i class="fas fa-shield-alt text-blue-500 text-2xl group-hover:scale-110 transition duration-300"></i>
                     <div class="text-left">
                         <p class="text-xs font-bold text-slate-500 uppercase">Durability</p>
                         <p class="text-sm text-white font-bold">기존 매트 대비 300% 내구성</p>
                     </div>
                 </div>
-                <div class="flex items-center gap-3">
-                    <i class="fas fa-check-circle text-blue-500 text-2xl"></i>
+                <div class="flex items-center gap-3 group cursor-default">
+                    <i class="fas fa-check-circle text-blue-500 text-2xl group-hover:scale-110 transition duration-300"></i>
                     <div class="text-left">
                         <p class="text-xs font-bold text-slate-500 uppercase">Material</p>
                         <p class="text-sm text-white font-bold">KC 인증 친환경 소재</p>
@@ -163,7 +187,7 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="lg:grid lg:grid-cols-2 lg:gap-16 items-center">
                 <!-- Content -->
-                <div class="mb-12 lg:mb-0">
+                <div class="mb-12 lg:mb-0 reveal">
                     <h2 class="font-eng text-blue-600 font-bold tracking-wide uppercase text-sm mb-2">Our Technology</h2>
                     <h3 class="text-3xl md:text-4xl font-black text-slate-900 mb-6 leading-tight">
                         모방할 수 없는<br>
@@ -176,15 +200,15 @@
                     </p>
                     
                     <div class="space-y-6">
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold">01</div>
+                        <div class="flex items-start group">
+                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold group-hover:bg-blue-600 group-hover:text-white transition duration-300">01</div>
                             <div class="ml-4">
                                 <h4 class="text-lg font-bold text-slate-900">충격 분산 레이어</h4>
                                 <p class="mt-1 text-slate-600 text-sm">타격 시 손목에 전해지는 충격을 획기적으로 줄여 부상을 방지합니다.</p>
                             </div>
                         </div>
-                        <div class="flex items-start">
-                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold">02</div>
+                        <div class="flex items-start group">
+                            <div class="flex-shrink-0 h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 font-bold group-hover:bg-blue-600 group-hover:text-white transition duration-300">02</div>
                             <div class="ml-4">
                                 <h4 class="text-lg font-bold text-slate-900">특수 강화 섬유</h4>
                                 <p class="mt-1 text-slate-600 text-sm">일반 나일론 대비 3배 강한 내구성으로 마모와 찢어짐에 강합니다.</p>
@@ -194,18 +218,13 @@
                 </div>
                 
                 <!-- Image/Visual -->
-                <div class="relative">
-                    <div class="absolute inset-0 bg-blue-200 rounded-3xl transform rotate-3 scale-95 opacity-30"></div>
-                    <div class="relative bg-slate-900 rounded-2xl shadow-2xl overflow-hidden border border-slate-700">
+                <div class="relative reveal delay-200-ms">
+                    <div class="absolute inset-0 bg-blue-200 rounded-3xl transform rotate-3 scale-95 opacity-30 animate-pulse"></div>
+                    <div class="relative bg-slate-900 rounded-2xl shadow-2xl overflow-hidden border border-slate-700 hover:scale-[1.01] transition duration-500">
                         <!-- Technical Diagram -->
                         <div class="aspect-w-4 aspect-h-3 bg-slate-800 relative group">
-                            <img src="https://images.unsplash.com/photo-1535132011086-b8818f016104?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Tech Layer" class="object-cover w-full h-full opacity-60 group-hover:scale-105 transition duration-500">
-                            <div class="absolute inset-0 flex items-center justify-center">
-                                <div class="bg-white/10 backdrop-blur-md border border-white/20 p-6 rounded-xl text-center">
-                                    <i class="fas fa-layer-group text-4xl text-blue-400 mb-3"></i>
-                                    <p class="text-slate-300 text-xs mt-1">기술 단면도 (Tech View)</p>
-                                </div>
-                            </div>
+                            <img src="https://images.unsplash.com/photo-1535132011086-b8818f016104?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Tech Layer" class="object-cover w-full h-full opacity-60 group-hover:scale-105 transition duration-700">
+                            <!-- Modified: Removed the center text box overlay -->
                             <div class="absolute top-4 left-4 text-xs font-mono text-blue-400">
                                 <p>SCALE: 1:1</p>
                                 <p>MAT-ID: BNB-2026</p>
@@ -217,18 +236,19 @@
         </div>
     </section>
 
-    <!-- Recommend Section (New) -->
+    <!-- Recommend Section -->
     <section id="recommend" class="py-20 bg-slate-50 border-t border-slate-100">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="text-center mb-16">
+            <div class="text-center mb-16 reveal">
                 <span class="text-blue-500 font-bold tracking-wider uppercase text-sm">Partnership</span>
                 <h2 class="mt-2 text-3xl md:text-4xl font-black text-slate-900">이런 분들께 추천합니다</h2>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Target 1 -->
-                <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300">
-                    <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 text-2xl mb-6 mx-auto">
+                <!-- Modified: Added hover:border-blue-500 -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-100 hover:border-blue-500 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 reveal delay-0 cursor-default">
+                    <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 text-2xl mb-6 mx-auto group-hover:bg-blue-600 group-hover:text-white transition-colors duration-300">
                         <i class="fas fa-store-alt"></i>
                     </div>
                     <h3 class="text-xl font-bold text-center mb-4">스크린 골프 창업주</h3>
@@ -240,7 +260,8 @@
                 </div>
 
                 <!-- Target 2 -->
-                <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300">
+                <!-- Modified: Added hover:border-blue-500 -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-100 hover:border-blue-500 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 reveal delay-100-ms cursor-default">
                     <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 text-2xl mb-6 mx-auto">
                         <i class="fas fa-network-wired"></i>
                     </div>
@@ -253,7 +274,8 @@
                 </div>
 
                 <!-- Target 3 -->
-                <div class="bg-white p-8 rounded-2xl border border-slate-100 shadow-sm hover:shadow-xl transition-all duration-300">
+                <!-- Modified: Added hover:border-blue-500 -->
+                <div class="bg-white p-8 rounded-2xl border border-slate-100 hover:border-blue-500 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 reveal delay-200-ms cursor-default">
                     <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 text-2xl mb-6 mx-auto">
                         <i class="fas fa-sync-alt"></i>
                     </div>
@@ -271,14 +293,14 @@
     <!-- B2B Benefit Section -->
     <section id="benefit" class="py-20 bg-slate-900 text-white">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="text-center mb-16">
+            <div class="text-center mb-16 reveal">
                 <span class="text-blue-500 font-bold tracking-wider uppercase text-sm">Benefit</span>
                 <h2 class="mt-2 text-3xl md:text-4xl font-black">사장님의 고민을 해결합니다</h2>
             </div>
             
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <!-- Card 1 -->
-                <div class="group bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-blue-500 transition-all duration-300 hover:-translate-y-2">
+                <div class="group bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-blue-500 transition-all duration-300 hover:-translate-y-2 reveal delay-0">
                     <div class="w-14 h-14 bg-slate-700 rounded-lg flex items-center justify-center text-2xl text-blue-400 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
                         <i class="fas fa-coins"></i>
                     </div>
@@ -289,7 +311,7 @@
                 </div>
 
                 <!-- Card 2 -->
-                <div class="group bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-blue-500 transition-all duration-300 hover:-translate-y-2">
+                <div class="group bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-blue-500 transition-all duration-300 hover:-translate-y-2 reveal delay-100-ms">
                     <div class="w-14 h-14 bg-slate-700 rounded-lg flex items-center justify-center text-2xl text-blue-400 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
                         <i class="fas fa-tools"></i>
                     </div>
@@ -300,7 +322,7 @@
                 </div>
 
                 <!-- Card 3 -->
-                <div class="group bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-blue-500 transition-all duration-300 hover:-translate-y-2">
+                <div class="group bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-blue-500 transition-all duration-300 hover:-translate-y-2 reveal delay-200-ms">
                     <div class="w-14 h-14 bg-slate-700 rounded-lg flex items-center justify-center text-2xl text-blue-400 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
                         <i class="fas fa-users"></i>
                     </div>
@@ -314,24 +336,24 @@
     </section>
 
     <!-- Custom Order Emphasis (New Banner) -->
-    <section class="py-16 bg-blue-600 relative overflow-hidden">
-        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10"></div>
-        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center justify-between text-center md:text-left">
+    <section class="py-16 bg-blue-600 relative overflow-hidden group">
+        <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 transition duration-1000 group-hover:scale-105"></div>
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center justify-between text-center md:text-left reveal">
             <div class="mb-8 md:mb-0">
-                <span class="bg-white/20 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-3 inline-block">Custom Made</span>
+                <span class="bg-white/20 text-white px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider mb-3 inline-block animate-pulse">Custom Made</span>
                 <h2 class="text-3xl md:text-4xl font-black text-white mb-2">어떤 공간이든 100% 맞춤 제작</h2>
                 <p class="text-blue-100 text-lg">규격 외 사이즈, 특수 형태, 로고 인쇄까지. 고객님의 매장에 딱 맞게 만들어 드립니다.</p>
             </div>
-            <a href="#products" class="bg-white text-blue-600 px-8 py-4 rounded-xl font-bold hover:bg-slate-100 transition shadow-lg whitespace-nowrap">
+            <a href="#products" class="bg-white text-blue-600 px-8 py-4 rounded-xl font-bold hover:bg-slate-100 hover:shadow-xl hover:scale-105 transition-all duration-300 whitespace-nowrap">
                 맞춤 제작 문의하기
             </a>
         </div>
     </section>
 
-    <!-- Process Section (New) -->
+    <!-- Process Section -->
     <section id="process" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="text-center mb-16">
+            <div class="text-center mb-16 reveal">
                 <span class="text-blue-500 font-bold tracking-wider uppercase text-sm">Order Process</span>
                 <h2 class="mt-2 text-3xl font-black text-slate-900">주문은 이렇게 진행됩니다</h2>
             </div>
@@ -342,26 +364,26 @@
                 
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
                     <!-- Step 1 -->
-                    <div class="bg-white p-6 text-center">
-                        <div class="w-16 h-16 bg-slate-900 rounded-full flex items-center justify-center text-white text-xl font-bold mx-auto mb-4 border-4 border-white shadow-lg">1</div>
+                    <div class="bg-white p-6 text-center group reveal delay-0">
+                        <div class="w-16 h-16 bg-slate-900 rounded-full flex items-center justify-center text-white text-xl font-bold mx-auto mb-4 border-4 border-white shadow-lg group-hover:bg-blue-600 group-hover:scale-110 transition duration-300">1</div>
                         <h3 class="font-bold text-lg mb-2">상담 및 견적 문의</h3>
                         <p class="text-sm text-slate-500">홈페이지 또는 전화를 통해<br>원하시는 규격과 수량을 문의하세요.</p>
                     </div>
                     <!-- Step 2 -->
-                    <div class="bg-white p-6 text-center">
-                        <div class="w-16 h-16 bg-slate-900 rounded-full flex items-center justify-center text-white text-xl font-bold mx-auto mb-4 border-4 border-white shadow-lg">2</div>
+                    <div class="bg-white p-6 text-center group reveal delay-100-ms">
+                        <div class="w-16 h-16 bg-slate-900 rounded-full flex items-center justify-center text-white text-xl font-bold mx-auto mb-4 border-4 border-white shadow-lg group-hover:bg-blue-600 group-hover:scale-110 transition duration-300">2</div>
                         <h3 class="font-bold text-lg mb-2">맞춤 제안 & 계약</h3>
                         <p class="text-sm text-slate-500">전문 매니저가 현장 상황에 맞는<br>최적의 제품과 견적을 제안합니다.</p>
                     </div>
                     <!-- Step 3 -->
-                    <div class="bg-white p-6 text-center">
-                        <div class="w-16 h-16 bg-slate-900 rounded-full flex items-center justify-center text-white text-xl font-bold mx-auto mb-4 border-4 border-white shadow-lg">3</div>
+                    <div class="bg-white p-6 text-center group reveal delay-200-ms">
+                        <div class="w-16 h-16 bg-slate-900 rounded-full flex items-center justify-center text-white text-xl font-bold mx-auto mb-4 border-4 border-white shadow-lg group-hover:bg-blue-600 group-hover:scale-110 transition duration-300">3</div>
                         <h3 class="font-bold text-lg mb-2">제작 및 검수</h3>
                         <p class="text-sm text-slate-500">주문 확정 후 즉시 제작에 들어가며,<br>철저한 품질 검수를 거칩니다.</p>
                     </div>
                     <!-- Step 4 -->
-                    <div class="bg-white p-6 text-center">
-                        <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center text-white text-xl font-bold mx-auto mb-4 border-4 border-white shadow-lg">4</div>
+                    <div class="bg-white p-6 text-center group reveal delay-300-ms">
+                        <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center text-white text-xl font-bold mx-auto mb-4 border-4 border-white shadow-lg group-hover:scale-110 transition duration-300">4</div>
                         <h3 class="font-bold text-lg mb-2">배송 및 설치 지원</h3>
                         <p class="text-sm text-slate-500">안전하게 배송해 드리며,<br>필요 시 설치 가이드를 제공합니다.</p>
                     </div>
@@ -373,19 +395,19 @@
     <!-- Product Detail & Showcase (Interactive) -->
     <section id="products" class="pt-24 pb-24 bg-slate-50 border-t border-slate-200">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="text-center mb-12">
+            <div class="text-center mb-12 reveal">
                 <span class="text-blue-500 font-bold text-xs uppercase tracking-widest">Detail View</span>
                 <h2 class="text-3xl font-black text-slate-900 mt-2">BNB Premium Bunker Mat</h2>
                 <p class="mt-4 text-slate-500">제품의 디테일을 클릭하여 확인하세요.</p>
             </div>
 
-            <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100 flex flex-col lg:flex-row h-auto lg:h-[600px]">
+            <div class="bg-white rounded-3xl shadow-xl overflow-hidden border border-slate-100 flex flex-col lg:flex-row h-auto lg:h-[600px] reveal delay-100-ms">
                 
                 <!-- Left: Interactive Image Gallery -->
                 <div class="lg:w-3/5 bg-slate-100 p-6 flex flex-col">
                     <!-- Main Image Display -->
-                    <div class="flex-1 bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 relative mb-4 group">
-                        <img id="mainProductImage" src="https://images.unsplash.com/photo-1593111774240-d529f12db464?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Main View" class="w-full h-full object-cover transition duration-500 transform group-hover:scale-105 cursor-zoom-in">
+                    <div class="flex-1 bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 relative mb-4 group cursor-zoom-in">
+                        <img id="mainProductImage" src="https://images.unsplash.com/photo-1593111774240-d529f12db464?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Main View" class="w-full h-full object-cover transition duration-700 transform group-hover:scale-110">
                         <div class="absolute bottom-4 left-4 bg-black/60 text-white px-3 py-1 rounded-full text-xs font-bold backdrop-blur-sm" id="imageLabel">
                             전체 모습 (Front View)
                         </div>
@@ -394,19 +416,19 @@
                     <!-- Thumbnails List -->
                     <div class="flex gap-3 h-24 overflow-x-auto pb-2">
                         <!-- Thumb 1 -->
-                        <button onclick="changeImage(this, 'https://images.unsplash.com/photo-1593111774240-d529f12db464?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80', '전체 모습 (Front View)')" class="w-24 flex-shrink-0 rounded-lg overflow-hidden border-2 border-blue-500 thumb-active transition hover:opacity-100 opacity-70">
+                        <button onclick="changeImage(this, 'https://images.unsplash.com/photo-1593111774240-d529f12db464?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80', '전체 모습 (Front View)')" class="w-24 flex-shrink-0 rounded-lg overflow-hidden border-2 border-blue-500 thumb-active transition hover:opacity-100 opacity-70 hover:scale-105">
                             <img src="https://images.unsplash.com/photo-1593111774240-d529f12db464?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" class="w-full h-full object-cover">
                         </button>
                         <!-- Thumb 2 (Side/Thickness) -->
-                        <button onclick="changeImage(this, 'https://images.unsplash.com/photo-1615114814213-a245ffc79e9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80', '측면 두께 (Side Profile)')" class="w-24 flex-shrink-0 rounded-lg overflow-hidden border-2 border-transparent hover:border-blue-300 transition hover:opacity-100 opacity-70">
+                        <button onclick="changeImage(this, 'https://images.unsplash.com/photo-1615114814213-a245ffc79e9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80', '측면 두께 (Side Profile)')" class="w-24 flex-shrink-0 rounded-lg overflow-hidden border-2 border-transparent hover:border-blue-300 transition hover:opacity-100 opacity-70 hover:scale-105">
                             <img src="https://images.unsplash.com/photo-1615114814213-a245ffc79e9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" class="w-full h-full object-cover">
                         </button>
                         <!-- Thumb 3 (Texture) -->
-                        <button onclick="changeImage(this, 'https://images.unsplash.com/photo-1519226612673-73c0234437ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80', '표면 텍스처 (Texture Detail)')" class="w-24 flex-shrink-0 rounded-lg overflow-hidden border-2 border-transparent hover:border-blue-300 transition hover:opacity-100 opacity-70">
+                        <button onclick="changeImage(this, 'https://images.unsplash.com/photo-1519226612673-73c0234437ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80', '표면 텍스처 (Texture Detail)')" class="w-24 flex-shrink-0 rounded-lg overflow-hidden border-2 border-transparent hover:border-blue-300 transition hover:opacity-100 opacity-70 hover:scale-105">
                             <img src="https://images.unsplash.com/photo-1519226612673-73c0234437ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" class="w-full h-full object-cover">
                         </button>
                         <!-- Thumb 4 (Backside) -->
-                        <button onclick="changeImage(this, 'https://images.unsplash.com/photo-1622359560389-91a0c7c8f292?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80', '후면 마감 (Backside)')" class="w-24 flex-shrink-0 rounded-lg overflow-hidden border-2 border-transparent hover:border-blue-300 transition hover:opacity-100 opacity-70">
+                        <button onclick="changeImage(this, 'https://images.unsplash.com/photo-1622359560389-91a0c7c8f292?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80', '후면 마감 (Backside)')" class="w-24 flex-shrink-0 rounded-lg overflow-hidden border-2 border-transparent hover:border-blue-300 transition hover:opacity-100 opacity-70 hover:scale-105">
                             <img src="https://images.unsplash.com/photo-1622359560389-91a0c7c8f292?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" class="w-full h-full object-cover">
                         </button>
                     </div>
@@ -461,10 +483,10 @@
 
                     <div class="mt-8 pt-8 border-t border-slate-100">
                         <div class="flex gap-3">
-                            <button class="flex-1 bg-slate-900 text-white font-bold py-4 rounded-xl hover:bg-slate-800 transition shadow-lg flex items-center justify-center gap-2">
+                            <button class="flex-1 bg-slate-900 text-white font-bold py-4 rounded-xl hover:bg-slate-800 transition shadow-lg hover:shadow-blue-900/30 flex items-center justify-center gap-2 transform hover:-translate-y-1">
                                 <span>견적서 요청하기</span> <i class="fas fa-file-invoice"></i>
                             </button>
-                            <button class="px-5 border border-slate-200 rounded-xl hover:bg-slate-50 text-slate-600 transition flex items-center justify-center" title="브로슈어 다운로드">
+                            <button class="px-5 border border-slate-200 rounded-xl hover:bg-slate-50 text-slate-600 transition flex items-center justify-center hover:border-slate-400" title="브로슈어 다운로드">
                                 <i class="fas fa-download"></i>
                             </button>
                         </div>
@@ -478,7 +500,7 @@
     <!-- Installation Gallery -->
     <section class="pb-24 bg-slate-50">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
-            <div class="flex items-end justify-between mb-8">
+            <div class="flex items-end justify-between mb-8 reveal">
                 <div>
                     <span class="text-blue-500 font-bold text-xs uppercase tracking-widest">Gallery</span>
                     <h3 class="text-2xl font-bold text-slate-900">설치 및 시공 사례</h3>
@@ -487,32 +509,32 @@
             </div>
             
             <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-                <div class="group relative aspect-square bg-white rounded-xl overflow-hidden cursor-pointer shadow-md">
-                    <img src="https://images.unsplash.com/photo-1599394022918-6c2776530abb?auto=format&fit=crop&w=600&q=80" class="object-cover w-full h-full group-hover:scale-110 transition duration-500">
+                <div class="group relative aspect-square bg-white rounded-xl overflow-hidden cursor-pointer shadow-md reveal delay-0">
+                    <img src="https://images.unsplash.com/photo-1599394022918-6c2776530abb?auto=format&fit=crop&w=600&q=80" class="object-cover w-full h-full group-hover:scale-110 transition duration-700">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-4">
-                        <span class="text-white font-bold text-sm">VIP 룸 시공</span>
-                        <span class="text-slate-300 text-xs">서울 강남점</span>
+                        <span class="text-white font-bold text-sm transform translate-y-4 group-hover:translate-y-0 transition duration-300">VIP 룸 시공</span>
+                        <span class="text-slate-300 text-xs transform translate-y-4 group-hover:translate-y-0 transition duration-300 delay-75">서울 강남점</span>
                     </div>
                 </div>
-                <div class="group relative aspect-square bg-white rounded-xl overflow-hidden cursor-pointer shadow-md">
-                    <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=600&q=80" class="object-cover w-full h-full group-hover:scale-110 transition duration-500">
+                <div class="group relative aspect-square bg-white rounded-xl overflow-hidden cursor-pointer shadow-md reveal delay-100-ms">
+                    <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=600&q=80" class="object-cover w-full h-full group-hover:scale-110 transition duration-700">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-4">
-                        <span class="text-white font-bold text-sm">연습장 타석</span>
-                        <span class="text-slate-300 text-xs">경기 용인점</span>
+                        <span class="text-white font-bold text-sm transform translate-y-4 group-hover:translate-y-0 transition duration-300">연습장 타석</span>
+                        <span class="text-slate-300 text-xs transform translate-y-4 group-hover:translate-y-0 transition duration-300 delay-75">경기 용인점</span>
                     </div>
                 </div>
-                <div class="group relative aspect-square bg-white rounded-xl overflow-hidden cursor-pointer shadow-md">
-                    <img src="https://images.unsplash.com/photo-1565528033285-e362c3d52c20?auto=format&fit=crop&w=600&q=80" class="object-cover w-full h-full group-hover:scale-110 transition duration-500">
+                <div class="group relative aspect-square bg-white rounded-xl overflow-hidden cursor-pointer shadow-md reveal delay-200-ms">
+                    <img src="https://images.unsplash.com/photo-1565528033285-e362c3d52c20?auto=format&fit=crop&w=600&q=80" class="object-cover w-full h-full group-hover:scale-110 transition duration-700">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-4">
-                        <span class="text-white font-bold text-sm">개인 주택</span>
-                        <span class="text-slate-300 text-xs">제주 타운하우스</span>
+                        <span class="text-white font-bold text-sm transform translate-y-4 group-hover:translate-y-0 transition duration-300">개인 주택</span>
+                        <span class="text-slate-300 text-xs transform translate-y-4 group-hover:translate-y-0 transition duration-300 delay-75">제주 타운하우스</span>
                     </div>
                 </div>
-                <div class="group relative aspect-square bg-white rounded-xl overflow-hidden cursor-pointer shadow-md">
-                    <img src="https://images.unsplash.com/photo-1592657385566-6415f94b83f4?auto=format&fit=crop&w=600&q=80" class="object-cover w-full h-full group-hover:scale-110 transition duration-500">
+                <div class="group relative aspect-square bg-white rounded-xl overflow-hidden cursor-pointer shadow-md reveal delay-300-ms">
+                    <img src="https://images.unsplash.com/photo-1592657385566-6415f94b83f4?auto=format&fit=crop&w=600&q=80" class="object-cover w-full h-full group-hover:scale-110 transition duration-700">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-4">
-                        <span class="text-white font-bold text-sm">프랜차이즈</span>
-                        <span class="text-slate-300 text-xs">전국 50호점 납품</span>
+                        <span class="text-white font-bold text-sm transform translate-y-4 group-hover:translate-y-0 transition duration-300">프랜차이즈</span>
+                        <span class="text-slate-300 text-xs transform translate-y-4 group-hover:translate-y-0 transition duration-300 delay-75">전국 50호점 납품</span>
                     </div>
                 </div>
             </div>
@@ -545,9 +567,11 @@
                     <div>
                         <h4 class="font-bold text-slate-900 uppercase mb-4">Company</h4>
                         <ul class="space-y-3 text-slate-600">
-                            <li><a href="#tech" class="hover:text-blue-600">Technology</a></li>
-                            <li><a href="#products" class="hover:text-blue-600">Products</a></li>
-                            <li><a href="#process" class="hover:text-blue-600">Process</a></li>
+                            <li><a href="#tech" class="hover:text-blue-600 transition">Technology</a></li>
+                            <!-- Modified: Updated Footer Links to match Nav -->
+                            <li><a href="#recommend" class="hover:text-blue-600 transition">Partnership</a></li>
+                            <li><a href="#process" class="hover:text-blue-600 transition">Process</a></li>
+                            <li><a href="#products" class="hover:text-blue-600 transition">Products</a></li>
                         </ul>
                     </div>
                 </div>
@@ -555,9 +579,9 @@
             <div class="mt-12 pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center">
                 <p class="text-slate-400 text-xs">© 2026 BNB GOLF Company. All rights reserved.</p>
                 <div class="flex space-x-4 mt-4 md:mt-0">
-                    <a href="#" class="text-slate-400 hover:text-slate-600"><i class="fab fa-instagram text-xl"></i></a>
-                    <a href="#" class="text-slate-400 hover:text-slate-600"><i class="fab fa-facebook text-xl"></i></a>
-                    <a href="#" class="text-slate-400 hover:text-slate-600"><i class="fab fa-youtube text-xl"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-slate-600 transition transform hover:scale-110"><i class="fab fa-instagram text-xl"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-slate-600 transition transform hover:scale-110"><i class="fab fa-facebook text-xl"></i></a>
+                    <a href="#" class="text-slate-400 hover:text-slate-600 transition transform hover:scale-110"><i class="fab fa-youtube text-xl"></i></a>
                 </div>
             </div>
         </div>
@@ -565,7 +589,7 @@
 
     <!-- Floating Chat Button -->
     <div class="fixed bottom-6 right-6 z-40">
-        <button class="bg-yellow-400 hover:bg-yellow-500 text-slate-900 rounded-full p-4 shadow-xl transition-transform hover:-translate-y-1 group flex items-center gap-2 pr-6">
+        <button class="bg-yellow-400 hover:bg-yellow-500 text-slate-900 rounded-full p-4 shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group flex items-center gap-2 pr-6">
             <span class="bg-white/20 p-2 rounded-full">
                 <i class="fas fa-comment text-xl"></i>
             </span>
@@ -585,6 +609,27 @@
         window.onload = function() {
             window.scrollTo(0, 0);
         }
+
+        // Scroll Reveal Animation Script
+        document.addEventListener('DOMContentLoaded', function() {
+            const reveals = document.querySelectorAll('.reveal');
+
+            const revealOnScroll = function() {
+                const windowHeight = window.innerHeight;
+                const elementVisible = 100;
+
+                reveals.forEach((reveal) => {
+                    const elementTop = reveal.getBoundingClientRect().top;
+                    if (elementTop < windowHeight - elementVisible) {
+                        reveal.classList.add('active');
+                    }
+                });
+            };
+
+            window.addEventListener('scroll', revealOnScroll);
+            // Trigger once on load to show elements already in view
+            revealOnScroll();
+        });
 
         // Mobile Menu Logic
         const btn = document.querySelector('button[aria-controls="mobile-menu"]');
