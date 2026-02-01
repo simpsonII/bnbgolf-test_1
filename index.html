@@ -31,7 +31,6 @@
             background-size: cover;
             background-position: center;
             opacity: 0;
-            /* Smooth transition without snapping */
             transform: scale(1.1); 
             transition: opacity 2s ease-in-out, transform 10s linear;
         }
@@ -144,7 +143,6 @@
                         <a href="#recommend" class="font-eng text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800 px-3 py-2 rounded-md transition-all">PARTNERSHIP</a>
                         <a href="#process" class="font-eng text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800 px-3 py-2 rounded-md transition-all">PROCESS</a>
                         <a href="#products" class="font-eng text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800 px-3 py-2 rounded-md transition-all">PRODUCTS</a>
-                        <!-- Link Update: Quote Request (Nav) -->
                         <a href="quote.html" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full text-sm font-bold transition-all shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 transform hover:-translate-y-0.5">
                             견적 문의
                         </a>
@@ -168,7 +166,6 @@
                 <a href="#recommend" class="block px-3 py-3 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800 font-eng" onclick="closeMobileMenu()">PARTNERSHIP</a>
                 <a href="#process" class="block px-3 py-3 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800 font-eng" onclick="closeMobileMenu()">PROCESS</a>
                 <a href="#products" class="block px-3 py-3 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800 font-eng" onclick="closeMobileMenu()">PRODUCTS</a>
-                <!-- Link Update: Quote Request (Mobile) -->
                 <a href="quote.html" class="block w-full text-center mt-6 bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-lg text-base font-bold transition-all shadow-lg">
                     견적 문의 하기
                 </a>
@@ -213,9 +210,17 @@
                 </a>
             </div>
         </div>
+
+        <!-- Scroll Down Indicator (Restored & Centered) -->
+        <!-- Added left-1/2 and -translate-x-1/2 to perfectly center the element horizontally -->
+        <div class="absolute bottom-28 left-1/2 transform -translate-x-1/2 z-20 text-white/50 flex flex-col items-center animate-bounce cursor-pointer hover:text-white transition" onclick="document.getElementById('tech').scrollIntoView({behavior: 'smooth'})">
+            <span class="text-[10px] tracking-[0.2em] font-light mb-2 uppercase">Scroll Down</span>
+            <i class="fas fa-chevron-down text-xl"></i>
+        </div>
         
         <!-- Trust Indicators (Bottom Bar) -->
         <div class="absolute bottom-0 w-full bg-slate-900/80 backdrop-blur border-t border-slate-800 py-6 hidden md:block z-20">
+            <!-- Modified: Changed justify-center to justify-around to spread items -->
             <div class="max-w-7xl mx-auto px-6 lg:px-8 flex justify-around text-slate-400">
                 <div class="flex items-center gap-3 group cursor-default">
                     <i class="fas fa-certificate text-blue-500 text-2xl group-hover:scale-110 transition duration-300"></i>
@@ -286,6 +291,8 @@
                             <img src="https://images.unsplash.com/photo-1535132011086-b8818f016104?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Tech Layer" class="object-cover w-full h-full opacity-60 group-hover:scale-105 transition duration-700">
                             <!-- Removed the center text box overlay -->
                             <div class="absolute top-4 left-4 text-xs font-mono text-blue-400">
+                                <p>SCALE: 1:1</p>
+                                <p>MAT-ID: BNB-2026</p>
                             </div>
                         </div>
                     </div>
@@ -399,7 +406,6 @@
                 <h2 class="text-3xl md:text-4xl font-black text-white mb-2">어떤 공간이든 100% 맞춤 제작</h2>
                 <p class="text-blue-100 text-lg">규격 외 사이즈, 특수 형태, 로고 인쇄까지. 고객님의 매장에 딱 맞게 만들어 드립니다.</p>
             </div>
-            <!-- Link Update: Custom Order Banner -->
             <a href="quote.html" class="bg-white text-blue-600 px-8 py-4 rounded-xl font-bold hover:bg-slate-100 hover:shadow-xl hover:scale-105 transition-all duration-300 whitespace-nowrap">
                 맞춤 제작 문의하기
             </a>
