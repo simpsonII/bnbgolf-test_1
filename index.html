@@ -31,7 +31,6 @@
             background-size: cover;
             background-position: center;
             opacity: 0;
-            /* Smooth transition without snapping */
             transform: scale(1.1); 
             transition: opacity 2s ease-in-out, transform 10s linear;
         }
@@ -94,7 +93,7 @@
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
-        }
+        } /* Fixed: Missing brace added here */
 
         /* Staggered Delays for Grid Items */
         .delay-0 { transition-delay: 0s; }
@@ -108,7 +107,7 @@
             opacity: 1 !important;
         }
 
-        /* Marquee Animation for Gallery */
+        /* Marquee Animation for Gallery (Right to Left) */
         @keyframes marquee {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
@@ -117,8 +116,24 @@
             display: flex;
             width: max-content;
             animation: marquee 40s linear infinite;
+            will-change: transform; /* Optimized */
         }
         .animate-marquee:hover {
+            animation-play-state: paused;
+        }
+
+        /* New Marquee Animation (Left to Right) for Partners */
+        @keyframes marquee-right {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
+        }
+        .animate-marquee-right {
+            display: flex;
+            width: max-content;
+            animation: marquee-right 30s linear infinite;
+            will-change: transform; /* Optimized */
+        }
+        .animate-marquee-right:hover {
             animation-play-state: paused;
         }
     </style>
@@ -144,7 +159,6 @@
                         <a href="#recommend" class="font-eng text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800 px-3 py-2 rounded-md transition-all">PARTNERSHIP</a>
                         <a href="#process" class="font-eng text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800 px-3 py-2 rounded-md transition-all">PROCESS</a>
                         <a href="#products" class="font-eng text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800 px-3 py-2 rounded-md transition-all">PRODUCTS</a>
-                        <!-- Link Update: Quote Request (Nav) -->
                         <a href="quote.html" class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2 rounded-full text-sm font-bold transition-all shadow-lg shadow-blue-500/30 hover:shadow-blue-500/50 transform hover:-translate-y-0.5">
                             견적 문의
                         </a>
@@ -168,7 +182,6 @@
                 <a href="#recommend" class="block px-3 py-3 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800 font-eng" onclick="closeMobileMenu()">PARTNERSHIP</a>
                 <a href="#process" class="block px-3 py-3 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800 font-eng" onclick="closeMobileMenu()">PROCESS</a>
                 <a href="#products" class="block px-3 py-3 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800 font-eng" onclick="closeMobileMenu()">PRODUCTS</a>
-                <!-- Link Update: Quote Request (Mobile) -->
                 <a href="quote.html" class="block w-full text-center mt-6 bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-lg text-base font-bold transition-all shadow-lg">
                     견적 문의 하기
                 </a>
@@ -296,6 +309,78 @@
         </div>
     </section>
 
+    <!-- Partners / Brands Section (New) -->
+    <section class="py-20 bg-slate-50 border-t border-slate-100 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 mb-16 text-center reveal">
+            <span class="text-blue-500 font-bold tracking-wider uppercase text-sm">Trusted Partners</span>
+            <h2 class="mt-2 text-3xl md:text-4xl font-black text-slate-900">대한민국 대표 골프 브랜드와 함께합니다</h2>
+        </div>
+        
+        <div class="relative w-full">
+            <!-- Fade overlay for smooth edges -->
+            <div class="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none"></div>
+
+            <div class="animate-marquee-right flex items-center">
+                <!-- Logos Group 1 -->
+                <div class="flex items-center gap-16 px-8 flex-shrink-0">
+                    <div class="flex items-center gap-3 opacity-50 hover:opacity-100 transition duration-300 cursor-pointer grayscale hover:grayscale-0">
+                        <i class="fas fa-flag text-4xl text-slate-800"></i>
+                        <span class="font-black text-2xl font-eng text-slate-800">GOLFZON</span>
+                    </div>
+                    <div class="flex items-center gap-3 opacity-50 hover:opacity-100 transition duration-300 cursor-pointer grayscale hover:grayscale-0">
+                        <i class="fas fa-comment text-4xl text-yellow-400"></i>
+                        <span class="font-black text-2xl font-eng text-slate-800">KAKAO VX</span>
+                    </div>
+                    <div class="flex items-center gap-3 opacity-50 hover:opacity-100 transition duration-300 cursor-pointer grayscale hover:grayscale-0">
+                        <i class="fas fa-star text-4xl text-red-500"></i>
+                        <span class="font-black text-2xl font-eng text-slate-800">SG GOLF</span>
+                    </div>
+                    <div class="flex items-center gap-3 opacity-50 hover:opacity-100 transition duration-300 cursor-pointer grayscale hover:grayscale-0">
+                        <i class="fas fa-crown text-4xl text-yellow-600"></i>
+                        <span class="font-black text-2xl font-eng text-slate-800">QED</span>
+                    </div>
+                    <div class="flex items-center gap-3 opacity-50 hover:opacity-100 transition duration-300 cursor-pointer grayscale hover:grayscale-0">
+                        <i class="fas fa-swing text-4xl text-green-600"></i>
+                        <span class="font-black text-2xl font-eng text-slate-800">THE SWING</span>
+                    </div>
+                    <div class="flex items-center gap-3 opacity-50 hover:opacity-100 transition duration-300 cursor-pointer grayscale hover:grayscale-0">
+                        <i class="fas fa-university text-4xl text-blue-800"></i>
+                        <span class="font-black text-2xl font-eng text-slate-800">PGA ACADEMY</span>
+                    </div>
+                </div>
+
+                <!-- Logos Group 2 (Duplicate for Loop) -->
+                <div class="flex items-center gap-16 px-8 flex-shrink-0">
+                    <div class="flex items-center gap-3 opacity-50 hover:opacity-100 transition duration-300 cursor-pointer grayscale hover:grayscale-0">
+                        <i class="fas fa-flag text-4xl text-slate-800"></i>
+                        <span class="font-black text-2xl font-eng text-slate-800">GOLFZON</span>
+                    </div>
+                    <div class="flex items-center gap-3 opacity-50 hover:opacity-100 transition duration-300 cursor-pointer grayscale hover:grayscale-0">
+                        <i class="fas fa-comment text-4xl text-yellow-400"></i>
+                        <span class="font-black text-2xl font-eng text-slate-800">KAKAO VX</span>
+                    </div>
+                    <div class="flex items-center gap-3 opacity-50 hover:opacity-100 transition duration-300 cursor-pointer grayscale hover:grayscale-0">
+                        <i class="fas fa-star text-4xl text-red-500"></i>
+                        <span class="font-black text-2xl font-eng text-slate-800">SG GOLF</span>
+                    </div>
+                    <div class="flex items-center gap-3 opacity-50 hover:opacity-100 transition duration-300 cursor-pointer grayscale hover:grayscale-0">
+                        <i class="fas fa-crown text-4xl text-yellow-600"></i>
+                        <span class="font-black text-2xl font-eng text-slate-800">QED</span>
+                    </div>
+                    <div class="flex items-center gap-3 opacity-50 hover:opacity-100 transition duration-300 cursor-pointer grayscale hover:grayscale-0">
+                        <i class="fas fa-swing text-4xl text-green-600"></i>
+                        <span class="font-black text-2xl font-eng text-slate-800">THE SWING</span>
+                    </div>
+                    <div class="flex items-center gap-3 opacity-50 hover:opacity-100 transition duration-300 cursor-pointer grayscale hover:grayscale-0">
+                        <i class="fas fa-university text-4xl text-blue-800"></i>
+                        <span class="font-black text-2xl font-eng text-slate-800">PGA ACADEMY</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Recommend Section -->
     <section id="recommend" class="py-20 bg-slate-50 border-t border-slate-100">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
@@ -401,7 +486,6 @@
                 <h2 class="text-3xl md:text-4xl font-black text-white mb-2">어떤 공간이든 100% 맞춤 제작</h2>
                 <p class="text-blue-100 text-lg">규격 외 사이즈, 특수 형태, 로고 인쇄까지. 고객님의 매장에 딱 맞게 만들어 드립니다.</p>
             </div>
-            <!-- Link Update: Custom Order Banner -->
             <a href="quote.html" class="bg-white text-blue-600 px-8 py-4 rounded-xl font-bold hover:bg-slate-100 hover:shadow-xl hover:scale-105 transition-all duration-300 whitespace-nowrap">
                 맞춤 제작 문의하기
             </a>
@@ -545,6 +629,9 @@
                             <a href="quote.html" class="flex-1 bg-slate-900 text-white font-bold py-4 rounded-xl hover:bg-slate-800 transition shadow-lg hover:shadow-blue-900/30 flex items-center justify-center gap-2 transform hover:-translate-y-1">
                                 <span>견적서 요청하기</span> <i class="fas fa-file-invoice"></i>
                             </a>
+                            <button class="px-5 border border-slate-200 rounded-xl hover:bg-slate-50 text-slate-600 transition flex items-center justify-center hover:border-slate-400" title="브로슈어 다운로드">
+                                <i class="fas fa-download"></i>
+                            </button>
                         </div>
                         <p class="text-center text-xs text-slate-400 mt-3">* 대량 구매 시 추가 할인이 적용됩니다.</p>
                     </div>
