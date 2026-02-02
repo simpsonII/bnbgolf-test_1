@@ -3,7 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BNB GOLF - Premium Bunker Mat</title>
+    <meta name="google-site-verification" content="LCwtSWb6uXtr9GYOB-KnSr_7YbT0xMbiIRUThgWwftA" />
+    <meta name="naver-site-verification" content="e413e4ca5d3b6235ddce2fc50ebc40f2298d5125" />
+    <title>BNB GOLF - 프리미엄 골프 벙커 매트</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Montserrat:wght@400;600;700;800&display=swap" rel="stylesheet">
@@ -93,7 +95,7 @@
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
-        }
+        } /* Fixed: Missing brace added here */
 
         /* Staggered Delays for Grid Items */
         .delay-0 { transition-delay: 0s; }
@@ -107,7 +109,7 @@
             opacity: 1 !important;
         }
 
-        /* Marquee Animation for Gallery */
+        /* Marquee Animation for Gallery (Right to Left) */
         @keyframes marquee {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
@@ -116,8 +118,24 @@
             display: flex;
             width: max-content;
             animation: marquee 40s linear infinite;
+            will-change: transform; /* Optimized */
         }
         .animate-marquee:hover {
+            animation-play-state: paused;
+        }
+
+        /* New Marquee Animation (Left to Right) for Partners */
+        @keyframes marquee-right {
+            0% { transform: translateX(-50%); }
+            100% { transform: translateX(0); }
+        }
+        .animate-marquee-right {
+            display: flex;
+            width: max-content;
+            animation: marquee-right 30s linear infinite;
+            will-change: transform; /* Optimized */
+        }
+        .animate-marquee-right:hover {
             animation-play-state: paused;
         }
     </style>
@@ -210,17 +228,9 @@
                 </a>
             </div>
         </div>
-
-        <!-- Scroll Down Indicator (Restored & Centered) -->
-        <!-- Added left-1/2 and -translate-x-1/2 to perfectly center the element horizontally -->
-        <div class="absolute bottom-28 left-1/2 transform -translate-x-1/2 z-20 text-white/50 flex flex-col items-center animate-bounce cursor-pointer hover:text-white transition" onclick="document.getElementById('tech').scrollIntoView({behavior: 'smooth'})">
-            <span class="text-[10px] tracking-[0.2em] font-light mb-2 uppercase">Scroll Down</span>
-            <i class="fas fa-chevron-down text-xl"></i>
-        </div>
         
         <!-- Trust Indicators (Bottom Bar) -->
         <div class="absolute bottom-0 w-full bg-slate-900/80 backdrop-blur border-t border-slate-800 py-6 hidden md:block z-20">
-            <!-- Modified: Changed justify-center to justify-around to spread items -->
             <div class="max-w-7xl mx-auto px-6 lg:px-8 flex justify-around text-slate-400">
                 <div class="flex items-center gap-3 group cursor-default">
                     <i class="fas fa-certificate text-blue-500 text-2xl group-hover:scale-110 transition duration-300"></i>
@@ -291,10 +301,80 @@
                             <img src="https://images.unsplash.com/photo-1535132011086-b8818f016104?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Tech Layer" class="object-cover w-full h-full opacity-60 group-hover:scale-105 transition duration-700">
                             <!-- Removed the center text box overlay -->
                             <div class="absolute top-4 left-4 text-xs font-mono text-blue-400">
-                                <p>SCALE: 1:1</p>
-                                <p>MAT-ID: BNB-2026</p>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Partners / Brands Section (New) -->
+    <section class="py-20 bg-slate-50 border-t border-slate-100 overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 lg:px-8 mb-16 text-center reveal">
+            <span class="text-blue-500 font-bold tracking-wider uppercase text-sm">Trusted Partners</span>
+            <h2 class="mt-2 text-3xl md:text-4xl font-black text-slate-900">대한민국 대표 골프 브랜드와 함께합니다</h2>
+        </div>
+        
+        <div class="relative w-full">
+            <!-- Fade overlay for smooth edges -->
+            <div class="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none"></div>
+            <div class="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none"></div>
+
+            <div class="animate-marquee-right flex items-center">
+                <!-- Logos Group 1 -->
+                <div class="flex items-center gap-16 px-8 flex-shrink-0">
+                    <div class="flex items-center gap-3 opacity-50 hover:opacity-100 transition duration-300 cursor-pointer grayscale hover:grayscale-0">
+                        <i class="fas fa-flag text-4xl text-slate-800"></i>
+                        <span class="font-black text-2xl font-eng text-slate-800">GOLFZON</span>
+                    </div>
+                    <div class="flex items-center gap-3 opacity-50 hover:opacity-100 transition duration-300 cursor-pointer grayscale hover:grayscale-0">
+                        <i class="fas fa-comment text-4xl text-yellow-400"></i>
+                        <span class="font-black text-2xl font-eng text-slate-800">KAKAO VX</span>
+                    </div>
+                    <div class="flex items-center gap-3 opacity-50 hover:opacity-100 transition duration-300 cursor-pointer grayscale hover:grayscale-0">
+                        <i class="fas fa-star text-4xl text-red-500"></i>
+                        <span class="font-black text-2xl font-eng text-slate-800">SG GOLF</span>
+                    </div>
+                    <div class="flex items-center gap-3 opacity-50 hover:opacity-100 transition duration-300 cursor-pointer grayscale hover:grayscale-0">
+                        <i class="fas fa-crown text-4xl text-yellow-600"></i>
+                        <span class="font-black text-2xl font-eng text-slate-800">QED</span>
+                    </div>
+                    <div class="flex items-center gap-3 opacity-50 hover:opacity-100 transition duration-300 cursor-pointer grayscale hover:grayscale-0">
+                        <i class="fas fa-swing text-4xl text-green-600"></i>
+                        <span class="font-black text-2xl font-eng text-slate-800">THE SWING</span>
+                    </div>
+                    <div class="flex items-center gap-3 opacity-50 hover:opacity-100 transition duration-300 cursor-pointer grayscale hover:grayscale-0">
+                        <i class="fas fa-university text-4xl text-blue-800"></i>
+                        <span class="font-black text-2xl font-eng text-slate-800">PGA ACADEMY</span>
+                    </div>
+                </div>
+
+                <!-- Logos Group 2 (Duplicate for Loop) -->
+                <div class="flex items-center gap-16 px-8 flex-shrink-0">
+                    <div class="flex items-center gap-3 opacity-50 hover:opacity-100 transition duration-300 cursor-pointer grayscale hover:grayscale-0">
+                        <i class="fas fa-flag text-4xl text-slate-800"></i>
+                        <span class="font-black text-2xl font-eng text-slate-800">GOLFZON</span>
+                    </div>
+                    <div class="flex items-center gap-3 opacity-50 hover:opacity-100 transition duration-300 cursor-pointer grayscale hover:grayscale-0">
+                        <i class="fas fa-comment text-4xl text-yellow-400"></i>
+                        <span class="font-black text-2xl font-eng text-slate-800">KAKAO VX</span>
+                    </div>
+                    <div class="flex items-center gap-3 opacity-50 hover:opacity-100 transition duration-300 cursor-pointer grayscale hover:grayscale-0">
+                        <i class="fas fa-star text-4xl text-red-500"></i>
+                        <span class="font-black text-2xl font-eng text-slate-800">SG GOLF</span>
+                    </div>
+                    <div class="flex items-center gap-3 opacity-50 hover:opacity-100 transition duration-300 cursor-pointer grayscale hover:grayscale-0">
+                        <i class="fas fa-crown text-4xl text-yellow-600"></i>
+                        <span class="font-black text-2xl font-eng text-slate-800">QED</span>
+                    </div>
+                    <div class="flex items-center gap-3 opacity-50 hover:opacity-100 transition duration-300 cursor-pointer grayscale hover:grayscale-0">
+                        <i class="fas fa-swing text-4xl text-green-600"></i>
+                        <span class="font-black text-2xl font-eng text-slate-800">THE SWING</span>
+                    </div>
+                    <div class="flex items-center gap-3 opacity-50 hover:opacity-100 transition duration-300 cursor-pointer grayscale hover:grayscale-0">
+                        <i class="fas fa-university text-4xl text-blue-800"></i>
+                        <span class="font-black text-2xl font-eng text-slate-800">PGA ACADEMY</span>
                     </div>
                 </div>
             </div>
@@ -797,7 +877,6 @@
                 </div>
                 <!-- Scroll indicator hint -->
                 <div class="hidden md:flex items-center text-slate-400 text-xs gap-2">
-                    <i class="fas fa-arrows-alt-h"></i> DRAG or HOVER to PAUSE
                 </div>
             </div>
         </div>
