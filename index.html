@@ -95,7 +95,7 @@
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
-        } /* Fixed: Missing brace added here */
+        } 
 
         /* Staggered Delays for Grid Items */
         .delay-0 { transition-delay: 0s; }
@@ -109,7 +109,7 @@
             opacity: 1 !important;
         }
 
-        /* Marquee Animation for Gallery (Right to Left) */
+        /* Marquee Animation for Gallery */
         @keyframes marquee {
             0% { transform: translateX(0); }
             100% { transform: translateX(-50%); }
@@ -118,7 +118,7 @@
             display: flex;
             width: max-content;
             animation: marquee 40s linear infinite;
-            will-change: transform; /* Optimized */
+            will-change: transform; 
         }
         .animate-marquee:hover {
             animation-play-state: paused;
@@ -133,7 +133,7 @@
             display: flex;
             width: max-content;
             animation: marquee-right 30s linear infinite;
-            will-change: transform; /* Optimized */
+            will-change: transform; 
         }
         .animate-marquee-right:hover {
             animation-play-state: paused;
@@ -146,7 +146,7 @@
     <nav class="fixed w-full z-50 bg-slate-900/95 backdrop-blur-md border-b border-slate-700 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
-                <!-- Logo with Link to Top -->
+                <!-- Logo -->
                 <div class="flex-shrink-0">
                     <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="flex items-center gap-2 cursor-pointer group">
                         <div class="w-8 h-8 bg-blue-600 rounded flex items-center justify-center text-white font-bold group-hover:bg-blue-500 transition duration-300 transform group-hover:rotate-12">B</div>
@@ -177,7 +177,7 @@
             </div>
         </div>
 
-        <!-- Mobile Menu (Hidden by default) -->
+        <!-- Mobile Menu -->
         <div class="hidden md:hidden bg-slate-900 border-t border-slate-800 absolute w-full left-0 top-20 shadow-xl" id="mobile-menu">
             <div class="px-6 pt-2 pb-6 space-y-2">
                 <a href="#tech" class="block px-3 py-3 rounded-md text-base font-medium text-slate-300 hover:text-white hover:bg-slate-800 font-eng" onclick="closeMobileMenu()">TECHNOLOGY</a>
@@ -195,10 +195,11 @@
     <header class="relative min-h-screen flex items-center justify-center pt-24 pb-12 md:pb-32 overflow-hidden">
         
         <!-- Background Slider -->
+        <!-- [이미지 교체] image 폴더 내의 파일로 교체됨 -->
         <div class="hero-slider-container">
-            <div class="hero-slide active" style="background-image: url('https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');"></div>
-            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1535131749006-b7f58c99034b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');"></div>
-            <div class="hero-slide" style="background-image: url('https://images.unsplash.com/photo-1621255557639-653e0f93a77a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');"></div>
+            <div class="hero-slide active" style="background-image: url('image/hero-1.jpg');"></div>
+            <div class="hero-slide" style="background-image: url('image/hero-2.jpg');"></div>
+            <div class="hero-slide" style="background-image: url('image/hero-3.jpg');"></div>
         </div>
         
         <!-- Gradient Overlay -->
@@ -293,16 +294,14 @@
                 </div>
                 
                 <!-- Image/Visual -->
+                <!-- [이미지 교체] image/tech-main.jpg -->
                 <div class="relative reveal delay-200-ms">
                     <div class="absolute inset-0 bg-blue-200 rounded-3xl transform rotate-3 scale-95 opacity-30 animate-pulse"></div>
                     <div class="relative bg-slate-900 rounded-2xl shadow-2xl overflow-hidden border border-slate-700 hover:scale-[1.01] transition duration-500">
                         <!-- Technical Diagram -->
                         <div class="aspect-w-4 aspect-h-3 bg-slate-800 relative group">
-                            <img src="https://images.unsplash.com/photo-1535132011086-b8818f016104?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Tech Layer" class="object-cover w-full h-full opacity-60 group-hover:scale-105 transition duration-700">
-                            <!-- Removed the center text box overlay -->
+                            <img src="image/tech-main.jpg" alt="Tech Layer" class="object-cover w-full h-full opacity-60 group-hover:scale-105 transition duration-700">
                             <div class="absolute top-4 left-4 text-xs font-mono text-blue-400">
-                                <p>SCALE: 1:1</p>
-                                <p>MAT-ID: BNB-2026</p>
                             </div>
                         </div>
                     </div>
@@ -311,7 +310,7 @@
         </div>
     </section>
 
-    <!-- Partners / Brands Section (New) -->
+    <!-- Partners / Brands Section -->
     <section class="py-20 bg-slate-50 border-t border-slate-100 overflow-hidden">
         <div class="max-w-7xl mx-auto px-6 lg:px-8 mb-16 text-center reveal">
             <span class="text-blue-500 font-bold tracking-wider uppercase text-sm">Trusted Partners</span>
@@ -319,7 +318,6 @@
         </div>
         
         <div class="relative w-full">
-            <!-- Fade overlay for smooth edges -->
             <div class="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none"></div>
             <div class="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none"></div>
 
@@ -352,7 +350,7 @@
                     </div>
                 </div>
 
-                <!-- Logos Group 2 (Duplicate for Loop) -->
+                <!-- Logos Group 2 -->
                 <div class="flex items-center gap-16 px-8 flex-shrink-0">
                     <div class="flex items-center gap-3 opacity-50 hover:opacity-100 transition duration-300 cursor-pointer grayscale hover:grayscale-0">
                         <i class="fas fa-flag text-4xl text-slate-800"></i>
@@ -404,7 +402,6 @@
                         <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i> 타 매장과 차별화된 타구감</li>
                     </ul>
                 </div>
-
                 <!-- Target 2 -->
                 <div class="bg-white p-8 rounded-2xl border border-slate-100 hover:border-blue-500 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 reveal delay-100-ms cursor-default">
                     <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 text-2xl mb-6 mx-auto">
@@ -417,7 +414,6 @@
                         <li class="flex items-center"><i class="fas fa-check text-blue-500 mr-2"></i> 전용 규격 맞춤 제작 가능</li>
                     </ul>
                 </div>
-
                 <!-- Target 3 -->
                 <div class="bg-white p-8 rounded-2xl border border-slate-100 hover:border-blue-500 shadow-sm hover:shadow-xl hover:-translate-y-2 transition-all duration-300 reveal delay-200-ms cursor-default">
                     <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center text-blue-600 text-2xl mb-6 mx-auto">
@@ -453,7 +449,6 @@
                         반영구적인 내구성으로 교체 주기가 획기적으로 늘어납니다. 매년 발생하는 소모품 비용을 아끼세요.
                     </p>
                 </div>
-
                 <!-- Card 2 -->
                 <div class="group bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-blue-500 transition-all duration-300 hover:-translate-y-2 reveal delay-100-ms">
                     <div class="w-14 h-14 bg-slate-700 rounded-lg flex items-center justify-center text-2xl text-blue-400 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
@@ -464,7 +459,6 @@
                         제품 품질에 대한 자신감으로 1년 무상 보증을 약속합니다. 문제가 생기면 즉각적으로 해결해 드립니다.
                     </p>
                 </div>
-
                 <!-- Card 3 -->
                 <div class="group bg-slate-800 p-8 rounded-2xl border border-slate-700 hover:border-blue-500 transition-all duration-300 hover:-translate-y-2 reveal delay-200-ms">
                     <div class="w-14 h-14 bg-slate-700 rounded-lg flex items-center justify-center text-2xl text-blue-400 mb-6 group-hover:bg-blue-600 group-hover:text-white transition-colors">
@@ -479,7 +473,7 @@
         </div>
     </section>
 
-    <!-- Custom Order Emphasis (New Banner) -->
+    <!-- Custom Order Emphasis -->
     <section class="py-16 bg-blue-600 relative overflow-hidden group">
         <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-10 transition duration-1000 group-hover:scale-105"></div>
         <div class="max-w-7xl mx-auto px-6 lg:px-8 relative z-10 flex flex-col md:flex-row items-center justify-between text-center md:text-left reveal">
@@ -501,31 +495,24 @@
                 <span class="text-blue-500 font-bold tracking-wider uppercase text-sm">Order Process</span>
                 <h2 class="mt-2 text-3xl font-black text-slate-900">주문은 이렇게 진행됩니다</h2>
             </div>
-
             <div class="relative">
-                <!-- Line connector for desktop -->
                 <div class="hidden md:block absolute top-1/2 left-0 w-full h-1 bg-slate-100 -translate-y-1/2 z-0"></div>
-                
                 <div class="grid grid-cols-1 md:grid-cols-4 gap-8 relative z-10">
-                    <!-- Step 1 -->
                     <div class="bg-white p-6 text-center group reveal delay-0">
                         <div class="w-16 h-16 bg-slate-900 rounded-full flex items-center justify-center text-white text-xl font-bold mx-auto mb-4 border-4 border-white shadow-lg group-hover:bg-blue-600 group-hover:scale-110 transition duration-300">1</div>
                         <h3 class="font-bold text-lg mb-2">상담 및 견적 문의</h3>
                         <p class="text-sm text-slate-500">홈페이지 또는 전화를 통해<br>원하시는 규격과 수량을 문의하세요.</p>
                     </div>
-                    <!-- Step 2 -->
                     <div class="bg-white p-6 text-center group reveal delay-100-ms">
                         <div class="w-16 h-16 bg-slate-900 rounded-full flex items-center justify-center text-white text-xl font-bold mx-auto mb-4 border-4 border-white shadow-lg group-hover:bg-blue-600 group-hover:scale-110 transition duration-300">2</div>
                         <h3 class="font-bold text-lg mb-2">맞춤 제안 & 계약</h3>
                         <p class="text-sm text-slate-500">전문 매니저가 현장 상황에 맞는<br>최적의 제품과 견적을 제안합니다.</p>
                     </div>
-                    <!-- Step 3 -->
                     <div class="bg-white p-6 text-center group reveal delay-200-ms">
                         <div class="w-16 h-16 bg-slate-900 rounded-full flex items-center justify-center text-white text-xl font-bold mx-auto mb-4 border-4 border-white shadow-lg group-hover:bg-blue-600 group-hover:scale-110 transition duration-300">3</div>
                         <h3 class="font-bold text-lg mb-2">제작 및 검수</h3>
                         <p class="text-sm text-slate-500">주문 확정 후 즉시 제작에 들어가며,<br>철저한 품질 검수를 거칩니다.</p>
                     </div>
-                    <!-- Step 4 -->
                     <div class="bg-white p-6 text-center group reveal delay-300-ms">
                         <div class="w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center text-white text-xl font-bold mx-auto mb-4 border-4 border-white shadow-lg group-hover:scale-110 transition duration-300">4</div>
                         <h3 class="font-bold text-lg mb-2">배송 및 설치 지원</h3>
@@ -549,9 +536,10 @@
                 
                 <!-- Left: Interactive Image Gallery -->
                 <div class="lg:w-3/5 bg-slate-100 p-6 flex flex-col">
-                    <!-- Main Image Display -->
-                    <div class="flex-1 bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 relative mb-4 group cursor-zoom-in">
-                        <img id="mainProductImage" src="https://images.unsplash.com/photo-1593111774240-d529f12db464?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Main View" class="w-full h-full object-cover transition duration-700 transform group-hover:scale-110">
+                    <!-- Main Image Display (FIXED: aspect ratio) -->
+                    <!-- Used w-full aspect-[4/3] to maintain size -->
+                    <div class="w-full aspect-[4/3] bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 relative mb-4 group cursor-zoom-in">
+                        <img id="mainProductImage" src="image/product-main.jpg" alt="Main View" class="w-full h-full object-cover transition duration-700 transform group-hover:scale-110">
                         <div class="absolute bottom-4 left-4 bg-black/60 text-white px-3 py-1 rounded-full text-xs font-bold backdrop-blur-sm" id="imageLabel">
                             전체 모습 (Front View)
                         </div>
@@ -559,21 +547,18 @@
                     
                     <!-- Thumbnails List -->
                     <div class="flex gap-3 h-24 overflow-x-auto pb-2">
-                        <!-- Thumb 1 -->
-                        <button onclick="changeImage(this, 'https://images.unsplash.com/photo-1593111774240-d529f12db464?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80', '전체 모습 (Front View)')" class="w-24 flex-shrink-0 rounded-lg overflow-hidden border-2 border-blue-500 thumb-active transition hover:opacity-100 opacity-70 hover:scale-105">
-                            <img src="https://images.unsplash.com/photo-1593111774240-d529f12db464?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" class="w-full h-full object-cover">
+                        <!-- Update paths here too -->
+                        <button type="button" onclick="changeImage(this, 'image/product-thumb-1.jpg', '전체 모습 (Front View)')" class="w-24 flex-shrink-0 rounded-lg overflow-hidden border-2 border-blue-500 thumb-active transition hover:opacity-100 opacity-70 hover:scale-105">
+                            <img src="image/product-main.jpg" class="w-full h-full object-cover">
                         </button>
-                        <!-- Thumb 2 (Side/Thickness) -->
-                        <button onclick="changeImage(this, 'https://images.unsplash.com/photo-1615114814213-a245ffc79e9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80', '측면 두께 (Side Profile)')" class="w-24 flex-shrink-0 rounded-lg overflow-hidden border-2 border-transparent hover:border-blue-300 transition hover:opacity-100 opacity-70 hover:scale-105">
-                            <img src="https://images.unsplash.com/photo-1615114814213-a245ffc79e9a?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" class="w-full h-full object-cover">
+                        <button type="button" onclick="changeImage(this, 'image/product-thumb-2.jpg', '측면 두께 (Side Profile)')" class="w-24 flex-shrink-0 rounded-lg overflow-hidden border-2 border-transparent hover:border-blue-300 transition hover:opacity-100 opacity-70 hover:scale-105">
+                            <img src="image/product-thumb-1.jpg" class="w-full h-full object-cover">
                         </button>
-                        <!-- Thumb 3 (Texture) -->
-                        <button onclick="changeImage(this, 'https://images.unsplash.com/photo-1519226612673-73c0234437ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80', '표면 텍스처 (Texture Detail)')" class="w-24 flex-shrink-0 rounded-lg overflow-hidden border-2 border-transparent hover:border-blue-300 transition hover:opacity-100 opacity-70 hover:scale-105">
-                            <img src="https://images.unsplash.com/photo-1519226612673-73c0234437ef?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" class="w-full h-full object-cover">
+                        <button type="button" onclick="changeImage(this, 'image/product-thumb-3.jpg', '표면 텍스처 (Texture Detail)')" class="w-24 flex-shrink-0 rounded-lg overflow-hidden border-2 border-transparent hover:border-blue-300 transition hover:opacity-100 opacity-70 hover:scale-105">
+                            <img src="image/product-thumb-2.jpg" class="w-full h-full object-cover">
                         </button>
-                        <!-- Thumb 4 (Backside) -->
-                        <button onclick="changeImage(this, 'https://images.unsplash.com/photo-1622359560389-91a0c7c8f292?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80', '후면 마감 (Backside)')" class="w-24 flex-shrink-0 rounded-lg overflow-hidden border-2 border-transparent hover:border-blue-300 transition hover:opacity-100 opacity-70 hover:scale-105">
-                            <img src="https://images.unsplash.com/photo-1622359560389-91a0c7c8f292?ixlib=rb-1.2.1&auto=format&fit=crop&w=200&q=80" class="w-full h-full object-cover">
+                        <button type="button" onclick="changeImage(this, 'image/product-thumb-3.jpg', '후면 마감 (Backside)')" class="w-24 flex-shrink-0 rounded-lg overflow-hidden border-2 border-transparent hover:border-blue-300 transition hover:opacity-100 opacity-70 hover:scale-105">
+                            <img src="image/product-thumb-3.jpg" class="w-full h-full object-cover">
                         </button>
                     </div>
                 </div>
@@ -593,7 +578,7 @@
                             특수 레이어 공법으로 충격을 흡수하고, 반영구적인 내구성을 제공합니다.
                         </p>
 
-                        <!-- Detail Specs Accordion Style List -->
+                        <!-- Detail Specs -->
                         <div class="space-y-4 border-t border-slate-100 pt-6">
                             <div class="flex items-start gap-4">
                                 <div class="w-10 h-10 rounded-full bg-slate-100 flex items-center justify-center text-slate-600 flex-shrink-0">
@@ -631,9 +616,6 @@
                             <a href="quote.html" class="flex-1 bg-slate-900 text-white font-bold py-4 rounded-xl hover:bg-slate-800 transition shadow-lg hover:shadow-blue-900/30 flex items-center justify-center gap-2 transform hover:-translate-y-1">
                                 <span>견적서 요청하기</span> <i class="fas fa-file-invoice"></i>
                             </a>
-                            <button class="px-5 border border-slate-200 rounded-xl hover:bg-slate-50 text-slate-600 transition flex items-center justify-center hover:border-slate-400" title="브로슈어 다운로드">
-                                <i class="fas fa-download"></i>
-                            </button>
                         </div>
                         <p class="text-center text-xs text-slate-400 mt-3">* 대량 구매 시 추가 할인이 적용됩니다.</p>
                     </div>
@@ -643,11 +625,11 @@
     </section>
 
     <!-- New Section: Detailed Features (Product Detail Page Style - Enhanced Interaction) -->
+
+    <!-- Detailed Features -->
     <section class="py-24 bg-white border-t border-slate-200">
         <div class="max-w-4xl mx-auto px-6 lg:px-8">
-            
-            <!-- Point 1: Material -->
-            <!-- Interaction: Hover scale for image -->
+            <!-- Point 1 -->
             <div class="mb-24 reveal">
                 <div class="text-center mb-12">
                     <span class="text-blue-600 font-bold tracking-widest text-sm uppercase">Point 01</span>
@@ -658,12 +640,10 @@
                     </p>
                 </div>
                 <div class="rounded-2xl overflow-hidden shadow-lg border border-slate-100 group cursor-pointer">
-                    <img src="https://images.unsplash.com/photo-1621255557639-653e0f93a77a?ixlib=rb-1.2.1&auto=format&fit=crop&w=1200&q=80" alt="Material Detail" class="w-full h-auto transition duration-700 transform group-hover:scale-105">
+                    <img src="image/tech-main.jpg" alt="Material Detail" class="w-full h-auto transition duration-700 transform group-hover:scale-105">
                 </div>
             </div>
-
-            <!-- Point 2: Safety -->
-            <!-- Interaction: Hover border change and shadow -->
+            <!-- Point 2 -->
             <div class="mb-24 reveal">
                 <div class="text-center mb-12">
                     <span class="text-blue-600 font-bold tracking-widest text-sm uppercase">Point 02</span>
@@ -675,7 +655,7 @@
                 </div>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center bg-slate-50 rounded-2xl p-8 border border-slate-100 hover:border-blue-300 hover:shadow-xl transition duration-500 transform hover:-translate-y-1">
                     <div class="h-64 bg-white rounded-xl shadow-sm flex items-center justify-center border border-slate-200 relative overflow-hidden group">
-                         <!-- Conceptual Graph Animation on Hover -->
+                         <!-- Conceptual Graph -->
                          <div class="absolute bottom-0 left-8 w-16 bg-slate-300 h-1/2 rounded-t-lg transition-all duration-700 group-hover:h-[60%]"></div>
                          <div class="absolute bottom-0 left-32 w-16 bg-blue-500 h-1/6 rounded-t-lg transition-all duration-700 group-hover:h-[10%]"></div>
                          <div class="absolute bottom-4 left-8 text-xs font-bold w-16 text-center text-slate-600">일반매트</div>
@@ -684,25 +664,14 @@
                     </div>
                     <div>
                         <ul class="space-y-4">
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i>
-                                <span class="text-slate-700"><strong>손목 통증 Zero:</strong> 임팩트 시 충격량 70% 감소</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i>
-                                <span class="text-slate-700"><strong>엘보우 방지:</strong> 장시간 연습에도 관절 보호</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i>
-                                <span class="text-slate-700"><strong>소음 감소:</strong> 타격 소음을 줄여 쾌적한 환경 제공</span>
-                            </li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i><span class="text-slate-700"><strong>손목 통증 Zero:</strong> 임팩트 시 충격량 70% 감소</span></li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i><span class="text-slate-700"><strong>엘보우 방지:</strong> 장시간 연습에도 관절 보호</span></li>
+                            <li class="flex items-start"><i class="fas fa-check-circle text-blue-500 mt-1 mr-3"></i><span class="text-slate-700"><strong>소음 감소:</strong> 타격 소음을 줄여 쾌적한 환경 제공</span></li>
                         </ul>
                     </div>
                 </div>
             </div>
-
-            <!-- Point 3: Durability (Added) -->
-            <!-- Interaction: Hover zoom on image -->
+            <!-- Point 3 -->
             <div class="mb-24 reveal">
                 <div class="text-center mb-12">
                     <span class="text-blue-600 font-bold tracking-widest text-sm uppercase">Point 03</span>
@@ -716,28 +685,17 @@
                     <div class="p-8 flex flex-col justify-center bg-slate-50">
                         <h4 class="text-xl font-bold mb-4">내구성 테스트 결과</h4>
                         <ul class="space-y-3 text-sm text-slate-600">
-                            <li class="flex justify-between border-b border-slate-200 pb-2">
-                                <span>인장 강도</span>
-                                <span class="font-bold text-blue-600">최우수 등급</span>
-                            </li>
-                            <li class="flex justify-between border-b border-slate-200 pb-2">
-                                <span>마모 저항성</span>
-                                <span class="font-bold text-blue-600">기존 대비 300% 향상</span>
-                            </li>
-                            <li class="flex justify-between pt-2">
-                                <span>복원력</span>
-                                <span class="font-bold text-blue-600">즉각 복원 (Shape Memory)</span>
-                            </li>
+                            <li class="flex justify-between border-b border-slate-200 pb-2"><span>인장 강도</span><span class="font-bold text-blue-600">최우수 등급</span></li>
+                            <li class="flex justify-between border-b border-slate-200 pb-2"><span>마모 저항성</span><span class="font-bold text-blue-600">기존 대비 300% 향상</span></li>
+                            <li class="flex justify-between pt-2"><span>복원력</span><span class="font-bold text-blue-600">즉각 복원 (Shape Memory)</span></li>
                         </ul>
                     </div>
                     <div class="h-64 md:h-auto bg-slate-200 relative overflow-hidden">
-                        <img src="https://images.unsplash.com/photo-1599394022918-6c2776530abb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Durability Test" class="absolute inset-0 w-full h-full object-cover transition duration-700 transform group-hover:scale-110">
+                        <img src="image/detail-point-3.jpg" alt="Durability Test" class="absolute inset-0 w-full h-full object-cover transition duration-700 transform group-hover:scale-110">
                     </div>
                 </div>
             </div>
-
-            <!-- Point 4: Maintenance (Added) -->
-            <!-- Interaction: Card lift up -->
+            <!-- Point 4 -->
             <div class="mb-24 reveal">
                 <div class="text-center mb-12">
                     <span class="text-blue-600 font-bold tracking-widest text-sm uppercase">Point 04</span>
@@ -749,31 +707,23 @@
                 </div>
                 <div class="flex flex-col md:flex-row gap-6">
                     <div class="flex-1 bg-white p-6 rounded-2xl border border-slate-100 shadow-sm text-center hover:-translate-y-2 hover:shadow-md hover:border-blue-200 transition duration-300">
-                        <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center text-blue-500 text-2xl mx-auto mb-4">
-                            <i class="fas fa-wind"></i>
-                        </div>
+                        <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center text-blue-500 text-2xl mx-auto mb-4"><i class="fas fa-wind"></i></div>
                         <h4 class="font-bold text-lg mb-2">가루 날림 Zero</h4>
                         <p class="text-sm text-slate-500">특수 마감 처리로 섬유 탈락 방지</p>
                     </div>
                     <div class="flex-1 bg-white p-6 rounded-2xl border border-slate-100 shadow-sm text-center hover:-translate-y-2 hover:shadow-md hover:border-blue-200 transition duration-300">
-                        <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center text-blue-500 text-2xl mx-auto mb-4">
-                            <i class="fas fa-broom"></i>
-                        </div>
+                        <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center text-blue-500 text-2xl mx-auto mb-4"><i class="fas fa-broom"></i></div>
                         <h4 class="font-bold text-lg mb-2">Easy Cleaning</h4>
                         <p class="text-sm text-slate-500">청소기로 간편하게 관리 가능</p>
                     </div>
                     <div class="flex-1 bg-white p-6 rounded-2xl border border-slate-100 shadow-sm text-center hover:-translate-y-2 hover:shadow-md hover:border-blue-200 transition duration-300">
-                        <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center text-blue-500 text-2xl mx-auto mb-4">
-                            <i class="fas fa-shield-virus"></i>
-                        </div>
+                        <div class="w-16 h-16 bg-blue-50 rounded-full flex items-center justify-center text-blue-500 text-2xl mx-auto mb-4"><i class="fas fa-shield-virus"></i></div>
                         <h4 class="font-bold text-lg mb-2">항균 처리</h4>
                         <p class="text-sm text-slate-500">세균 번식을 억제하는 위생 소재</p>
                     </div>
                 </div>
             </div>
-
-            <!-- Point 5: Customization (Added) -->
-            <!-- Interaction: Background glow effect -->
+            <!-- Point 5 -->
             <div class="mb-24 reveal">
                 <div class="text-center mb-12">
                     <span class="text-blue-600 font-bold tracking-widest text-sm uppercase">Point 05</span>
@@ -795,7 +745,6 @@
                             </ul>
                         </div>
                         <div class="flex-shrink-0">
-                            <!-- Link Update: Custom Order -->
                             <a href="quote.html" class="inline-block bg-white text-slate-900 font-bold px-8 py-4 rounded-xl hover:bg-blue-50 transition shadow-lg transform group-hover:scale-105">
                                 맞춤 견적 신청하기
                             </a>
@@ -803,12 +752,9 @@
                     </div>
                 </div>
             </div>
-
             <!-- Comparison Table -->
             <div class="mb-24 reveal">
-                <div class="text-center mb-12">
-                    <h3 class="text-2xl font-bold text-slate-900">압도적인 성능 차이</h3>
-                </div>
+                <div class="text-center mb-12"><h3 class="text-2xl font-bold text-slate-900">압도적인 성능 차이</h3></div>
                 <div class="overflow-hidden rounded-xl border border-slate-200 shadow-sm hover:shadow-md transition duration-300">
                     <table class="w-full text-sm text-left text-slate-600">
                         <thead class="text-xs text-slate-700 uppercase bg-slate-100">
@@ -819,31 +765,14 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr class="bg-white border-b border-slate-100 hover:bg-blue-50 transition">
-                                <th scope="row" class="px-6 py-4 font-medium text-slate-900 whitespace-nowrap">수명 (내구성)</th>
-                                <td class="px-6 py-4 font-bold text-blue-600">약 12개월 이상 (반영구)</td>
-                                <td class="px-6 py-4">약 1~3개월</td>
-                            </tr>
-                            <tr class="bg-slate-50 border-b border-slate-100 hover:bg-blue-50 transition">
-                                <th scope="row" class="px-6 py-4 font-medium text-slate-900 whitespace-nowrap">타구감</th>
-                                <td class="px-6 py-4 font-bold text-blue-600">실제 모래 저항감 95% 재현</td>
-                                <td class="px-6 py-4">단순 나일론 잔디 느낌</td>
-                            </tr>
-                            <tr class="bg-white border-b border-slate-100 hover:bg-blue-50 transition">
-                                <th scope="row" class="px-6 py-4 font-medium text-slate-900 whitespace-nowrap">먼지/가루</th>
-                                <td class="px-6 py-4 font-bold text-blue-600">발생하지 않음 (특수코팅)</td>
-                                <td class="px-6 py-4">녹색 가루 날림 심함</td>
-                            </tr>
-                            <tr class="bg-slate-50 hover:bg-blue-50 transition">
-                                <th scope="row" class="px-6 py-4 font-medium text-slate-900 whitespace-nowrap">경제성</th>
-                                <td class="px-6 py-4 font-bold text-blue-600">교체 주기 길어 비용 절감</td>
-                                <td class="px-6 py-4">잦은 교체로 비용 과다</td>
-                            </tr>
+                            <tr class="bg-white border-b border-slate-100 hover:bg-blue-50 transition"><th scope="row" class="px-6 py-4 font-medium text-slate-900 whitespace-nowrap">수명 (내구성)</th><td class="px-6 py-4 font-bold text-blue-600">약 12개월 이상 (반영구)</td><td class="px-6 py-4">약 1~3개월</td></tr>
+                            <tr class="bg-slate-50 border-b border-slate-100 hover:bg-blue-50 transition"><th scope="row" class="px-6 py-4 font-medium text-slate-900 whitespace-nowrap">타구감</th><td class="px-6 py-4 font-bold text-blue-600">실제 모래 저항감 95% 재현</td><td class="px-6 py-4">단순 나일론 잔디 느낌</td></tr>
+                            <tr class="bg-white border-b border-slate-100 hover:bg-blue-50 transition"><th scope="row" class="px-6 py-4 font-medium text-slate-900 whitespace-nowrap">먼지/가루</th><td class="px-6 py-4 font-bold text-blue-600">발생하지 않음 (특수코팅)</td><td class="px-6 py-4">녹색 가루 날림 심함</td></tr>
+                            <tr class="bg-slate-50 hover:bg-blue-50 transition"><th scope="row" class="px-6 py-4 font-medium text-slate-900 whitespace-nowrap">경제성</th><td class="px-6 py-4 font-bold text-blue-600">교체 주기 길어 비용 절감</td><td class="px-6 py-4">잦은 교체로 비용 과다</td></tr>
                         </tbody>
                     </table>
                 </div>
             </div>
-
             <!-- Spec Info -->
             <div class="reveal">
                 <div class="bg-slate-900 text-white rounded-2xl p-8 md:p-10 flex flex-col md:flex-row justify-between items-center gap-8 shadow-2xl hover:shadow-blue-900/50 transition duration-500">
@@ -857,18 +786,13 @@
                             <li>• <strong>제조국:</strong> 대한민국 (Made in Korea)</li>
                         </ul>
                     </div>
-                    <!-- Link Update: Order Now (Spec) -->
-                    <a href="quote.html" class="bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-xl font-bold transition shadow-lg whitespace-nowrap transform hover:scale-105">
-                        지금 바로 주문하기
-                    </a>
+                    <a href="quote.html" class="bg-blue-600 hover:bg-blue-500 text-white px-8 py-4 rounded-xl font-bold transition shadow-lg whitespace-nowrap transform hover:scale-105">지금 바로 주문하기</a>
                 </div>
             </div>
-
         </div>
     </section>
 
     <!-- Installation Gallery -->
-    <!-- Modified: Increased vertical padding and changed to full-width scrolling marquee -->
     <section class="py-32 bg-slate-50 overflow-hidden">
         <div class="max-w-7xl mx-auto px-6 lg:px-8 mb-12">
             <div class="flex items-end justify-between reveal">
@@ -877,103 +801,54 @@
                     <h3 class="text-2xl font-bold text-slate-900 mt-2">설치 및 시공 사례</h3>
                     <p class="text-slate-500 text-sm mt-2">다양한 공간에 설치된 BNB 벙커매트를 확인해보세요.</p>
                 </div>
-                <!-- Scroll indicator hint -->
-                <div class="hidden md:flex items-center text-slate-400 text-xs gap-2">
-                    <i class="fas fa-arrows-alt-h"></i> DRAG or HOVER to PAUSE
-                </div>
+                <div class="hidden md:flex items-center text-slate-400 text-xs gap-2"><i class="fas fa-arrows-alt-h"></i> DRAG or HOVER to PAUSE</div>
             </div>
         </div>
-        
-        <!-- Scrolling Container -->
         <div class="relative w-full">
-            <!-- Left fade overlay -->
             <div class="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-slate-50 to-transparent z-10 pointer-events-none"></div>
-            <!-- Right fade overlay -->
             <div class="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-slate-50 to-transparent z-10 pointer-events-none"></div>
-
             <div class="animate-marquee gap-6 px-6">
-                <!-- Original Items (Group 1) -->
-                <!-- Item 1 -->
+                <!-- Gallery Items -->
                 <div class="w-80 md:w-96 aspect-[4/3] bg-white rounded-xl overflow-hidden shadow-lg border border-slate-100 relative group cursor-pointer flex-shrink-0">
-                    <img src="https://images.unsplash.com/photo-1599394022918-6c2776530abb?auto=format&fit=crop&w=600&q=80" class="object-cover w-full h-full group-hover:scale-110 transition duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6">
-                        <span class="text-white font-bold text-lg">VIP 룸 시공</span>
-                        <span class="text-slate-300 text-sm">서울 강남점</span>
-                    </div>
+                    <img src="image/gallery-1.jpg" class="object-cover w-full h-full group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6"><span class="text-white font-bold text-lg">VIP 룸 시공</span><span class="text-slate-300 text-sm">서울 강남점</span></div>
                 </div>
-                <!-- Item 2 -->
                 <div class="w-80 md:w-96 aspect-[4/3] bg-white rounded-xl overflow-hidden shadow-lg border border-slate-100 relative group cursor-pointer flex-shrink-0">
-                    <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=600&q=80" class="object-cover w-full h-full group-hover:scale-110 transition duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6">
-                        <span class="text-white font-bold text-lg">연습장 타석</span>
-                        <span class="text-slate-300 text-sm">경기 용인점</span>
-                    </div>
+                    <img src="image/gallery-2.jpg" class="object-cover w-full h-full group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6"><span class="text-white font-bold text-lg">연습장 타석</span><span class="text-slate-300 text-sm">경기 용인점</span></div>
                 </div>
-                <!-- Item 3 -->
                 <div class="w-80 md:w-96 aspect-[4/3] bg-white rounded-xl overflow-hidden shadow-lg border border-slate-100 relative group cursor-pointer flex-shrink-0">
-                    <img src="https://images.unsplash.com/photo-1565528033285-e362c3d52c20?auto=format&fit=crop&w=600&q=80" class="object-cover w-full h-full group-hover:scale-110 transition duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6">
-                        <span class="text-white font-bold text-lg">개인 주택</span>
-                        <span class="text-slate-300 text-sm">제주 타운하우스</span>
-                    </div>
+                    <img src="image/gallery-3.jpg" class="object-cover w-full h-full group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6"><span class="text-white font-bold text-lg">개인 주택</span><span class="text-slate-300 text-sm">제주 타운하우스</span></div>
                 </div>
-                <!-- Item 4 -->
                 <div class="w-80 md:w-96 aspect-[4/3] bg-white rounded-xl overflow-hidden shadow-lg border border-slate-100 relative group cursor-pointer flex-shrink-0">
-                    <img src="https://images.unsplash.com/photo-1592657385566-6415f94b83f4?auto=format&fit=crop&w=600&q=80" class="object-cover w-full h-full group-hover:scale-110 transition duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6">
-                        <span class="text-white font-bold text-lg">프랜차이즈</span>
-                        <span class="text-slate-300 text-sm">전국 50호점 납품</span>
-                    </div>
+                    <img src="image/gallery-4.jpg" class="object-cover w-full h-full group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6"><span class="text-white font-bold text-lg">프랜차이즈</span><span class="text-slate-300 text-sm">전국 50호점 납품</span></div>
                 </div>
-                <!-- Item 5 (Added) -->
                 <div class="w-80 md:w-96 aspect-[4/3] bg-white rounded-xl overflow-hidden shadow-lg border border-slate-100 relative group cursor-pointer flex-shrink-0">
-                    <img src="https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="object-cover w-full h-full group-hover:scale-110 transition duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6">
-                        <span class="text-white font-bold text-lg">호텔 피트니스</span>
-                        <span class="text-slate-300 text-sm">부산 해운대</span>
-                    </div>
+                    <img src="image/gallery-5.jpg" class="object-cover w-full h-full group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6"><span class="text-white font-bold text-lg">호텔 피트니스</span><span class="text-slate-300 text-sm">부산 해운대</span></div>
                 </div>
-
-                <!-- Duplicated Items for Seamless Loop (Group 2) -->
-                <!-- Item 1 Copy -->
+                <!-- Duplicated for Loop -->
                 <div class="w-80 md:w-96 aspect-[4/3] bg-white rounded-xl overflow-hidden shadow-lg border border-slate-100 relative group cursor-pointer flex-shrink-0">
-                    <img src="https://images.unsplash.com/photo-1599394022918-6c2776530abb?auto=format&fit=crop&w=600&q=80" class="object-cover w-full h-full group-hover:scale-110 transition duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6">
-                        <span class="text-white font-bold text-lg">VIP 룸 시공</span>
-                        <span class="text-slate-300 text-sm">서울 강남점</span>
-                    </div>
+                    <img src="image/gallery-1.jpg" class="object-cover w-full h-full group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6"><span class="text-white font-bold text-lg">VIP 룸 시공</span><span class="text-slate-300 text-sm">서울 강남점</span></div>
                 </div>
-                <!-- Item 2 Copy -->
                 <div class="w-80 md:w-96 aspect-[4/3] bg-white rounded-xl overflow-hidden shadow-lg border border-slate-100 relative group cursor-pointer flex-shrink-0">
-                    <img src="https://images.unsplash.com/photo-1535131749006-b7f58c99034b?auto=format&fit=crop&w=600&q=80" class="object-cover w-full h-full group-hover:scale-110 transition duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6">
-                        <span class="text-white font-bold text-lg">연습장 타석</span>
-                        <span class="text-slate-300 text-sm">경기 용인점</span>
-                    </div>
+                    <img src="image/gallery-2.jpg" class="object-cover w-full h-full group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6"><span class="text-white font-bold text-lg">연습장 타석</span><span class="text-slate-300 text-sm">경기 용인점</span></div>
                 </div>
-                <!-- Item 3 Copy -->
                 <div class="w-80 md:w-96 aspect-[4/3] bg-white rounded-xl overflow-hidden shadow-lg border border-slate-100 relative group cursor-pointer flex-shrink-0">
-                    <img src="https://images.unsplash.com/photo-1565528033285-e362c3d52c20?auto=format&fit=crop&w=600&q=80" class="object-cover w-full h-full group-hover:scale-110 transition duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6">
-                        <span class="text-white font-bold text-lg">개인 주택</span>
-                        <span class="text-slate-300 text-sm">제주 타운하우스</span>
-                    </div>
+                    <img src="image/gallery-3.jpg" class="object-cover w-full h-full group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6"><span class="text-white font-bold text-lg">개인 주택</span><span class="text-slate-300 text-sm">제주 타운하우스</span></div>
                 </div>
-                <!-- Item 4 Copy -->
                 <div class="w-80 md:w-96 aspect-[4/3] bg-white rounded-xl overflow-hidden shadow-lg border border-slate-100 relative group cursor-pointer flex-shrink-0">
-                    <img src="https://images.unsplash.com/photo-1592657385566-6415f94b83f4?auto=format&fit=crop&w=600&q=80" class="object-cover w-full h-full group-hover:scale-110 transition duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6">
-                        <span class="text-white font-bold text-lg">프랜차이즈</span>
-                        <span class="text-slate-300 text-sm">전국 50호점 납품</span>
-                    </div>
+                    <img src="image/gallery-4.jpg" class="object-cover w-full h-full group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6"><span class="text-white font-bold text-lg">프랜차이즈</span><span class="text-slate-300 text-sm">전국 50호점 납품</span></div>
                 </div>
-                <!-- Item 5 Copy -->
                 <div class="w-80 md:w-96 aspect-[4/3] bg-white rounded-xl overflow-hidden shadow-lg border border-slate-100 relative group cursor-pointer flex-shrink-0">
-                    <img src="https://images.unsplash.com/photo-1587174486073-ae5e5cff23aa?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" class="object-cover w-full h-full group-hover:scale-110 transition duration-700">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6">
-                        <span class="text-white font-bold text-lg">호텔 피트니스</span>
-                        <span class="text-slate-300 text-sm">부산 해운대</span>
-                    </div>
+                    <img src="image/gallery-5.jpg" class="object-cover w-full h-full group-hover:scale-110 transition duration-700">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition duration-300 flex flex-col justify-end p-6"><span class="text-white font-bold text-lg">호텔 피트니스</span><span class="text-slate-300 text-sm">부산 해운대</span></div>
                 </div>
             </div>
         </div>
@@ -984,21 +859,16 @@
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="md:flex md:justify-between items-start">
                 <div class="mb-8 md:mb-0 max-w-sm">
-                    <!-- Modified: Added link to logo for smooth scroll to top -->
                     <a href="#" onclick="window.scrollTo({top: 0, behavior: 'smooth'}); return false;" class="flex items-center gap-2 mb-4 group">
                         <div class="w-6 h-6 bg-slate-900 rounded flex items-center justify-center text-white text-xs font-bold group-hover:bg-slate-700 transition">B</div>
                         <span class="font-eng font-bold text-xl text-slate-900 group-hover:text-slate-700 transition">BNB GOLF</span>
                     </a>
-                    <p class="text-slate-500 text-sm leading-relaxed">
-                        대한민국 스크린 골프 벙커 매트의 표준.<br>
-                        끊임없는 연구 개발로 필드의 감동을 실내로 가져옵니다.
-                    </p>
+                    <p class="text-slate-500 text-sm leading-relaxed">대한민국 스크린 골프 벙커 매트의 표준.<br>끊임없는 연구 개발로 필드의 감동을 실내로 가져옵니다.</p>
                 </div>
                 <div class="grid grid-cols-2 gap-12 text-sm">
                     <div>
                         <h4 class="font-bold text-slate-900 uppercase mb-4">Contact Us</h4>
                         <ul class="space-y-3 text-slate-600">
-                            <!-- Modified: Added tel: and mailto: links for functionality -->
                             <li><a href="tel:02-1234-5678" class="hover:text-blue-600 transition flex items-center"><i class="fas fa-phone mr-2 text-slate-400"></i> 02-1234-5678</a></li>
                             <li><a href="mailto:sales@bnbgolf.com" class="hover:text-blue-600 transition flex items-center"><i class="fas fa-envelope mr-2 text-slate-400"></i> sales@bnbgolf.com</a></li>
                             <li><span class="flex items-center"><i class="fas fa-clock mr-2 text-slate-400"></i> Mon-Fri 09:00 - 18:00</span></li>
@@ -1008,7 +878,6 @@
                         <h4 class="font-bold text-slate-900 uppercase mb-4">Company</h4>
                         <ul class="space-y-3 text-slate-600">
                             <li><a href="#tech" class="hover:text-blue-600 transition">Technology</a></li>
-                            <!-- Modified: Updated Footer Links to match Nav -->
                             <li><a href="#recommend" class="hover:text-blue-600 transition">Partnership</a></li>
                             <li><a href="#process" class="hover:text-blue-600 transition">Process</a></li>
                             <li><a href="#products" class="hover:text-blue-600 transition">Products</a></li>
@@ -1019,7 +888,6 @@
             <div class="mt-12 pt-8 border-t border-slate-100 flex flex-col md:flex-row justify-between items-center">
                 <p class="text-slate-400 text-xs">© 2026 BNB GOLF Company. All rights reserved.</p>
                 <div class="flex space-x-4 mt-4 md:mt-0">
-                    <!-- Modified: Changed href="#" to avoid jumping to top, added alert -->
                     <a href="javascript:void(0)" onclick="alert('인스타그램 준비 중입니다.')" class="text-slate-400 hover:text-slate-600 transition transform hover:scale-110"><i class="fab fa-instagram text-xl"></i></a>
                     <a href="javascript:void(0)" onclick="alert('페이스북 준비 중입니다.')" class="text-slate-400 hover:text-slate-600 transition transform hover:scale-110"><i class="fab fa-facebook text-xl"></i></a>
                     <a href="javascript:void(0)" onclick="alert('유튜브 준비 중입니다.')" class="text-slate-400 hover:text-slate-600 transition transform hover:scale-110"><i class="fab fa-youtube text-xl"></i></a>
@@ -1030,67 +898,43 @@
 
     <!-- Floating Chat Button -->
     <div class="fixed bottom-6 right-6 z-40">
-        <!-- Link Update: Quote Request (Floating) -->
         <a href="quote.html" class="bg-yellow-400 hover:bg-yellow-500 text-slate-900 rounded-full p-4 shadow-xl transition-all duration-300 hover:-translate-y-2 hover:shadow-2xl group flex items-center gap-2 pr-6">
-            <span class="bg-white/20 p-2 rounded-full">
-                <i class="fas fa-comment text-xl"></i>
-            </span>
-            <div class="text-left">
-                <p class="text-xs font-bold opacity-70">궁금한 점이 있으신가요?</p>
-                <p class="text-sm font-black">실시간 채팅 상담</p>
-            </div>
+            <span class="bg-white/20 p-2 rounded-full"><i class="fas fa-comment text-xl"></i></span>
+            <div class="text-left"><p class="text-xs font-bold opacity-70">궁금한 점이 있으신가요?</p><p class="text-sm font-black">실시간 채팅 상담</p></div>
         </a>
     </div>
 
     <!-- Script for Interactivity -->
     <script>
-        // Force scroll to top on load
-        if ('scrollRestoration' in history) {
-            history.scrollRestoration = 'manual';
-        }
-        window.onload = function() {
-            window.scrollTo(0, 0);
-        }
+        if ('scrollRestoration' in history) { history.scrollRestoration = 'manual'; }
+        window.onload = function() { window.scrollTo(0, 0); }
 
-        // Hero Image Slider Script
         const heroSlides = document.querySelectorAll('.hero-slide');
         let currentSlide = 0;
-
         function nextSlide() {
             heroSlides[currentSlide].classList.remove('active');
             currentSlide = (currentSlide + 1) % heroSlides.length;
             heroSlides[currentSlide].classList.add('active');
         }
-
-        // Modified: Changed interval to 5000ms (5 seconds) for more relaxed viewing
         setInterval(nextSlide, 5000);
 
-        // Scroll Reveal Animation Script
         document.addEventListener('DOMContentLoaded', function() {
             const reveals = document.querySelectorAll('.reveal');
-
             const revealOnScroll = function() {
                 const windowHeight = window.innerHeight;
                 const elementVisible = 100;
-
                 reveals.forEach((reveal) => {
                     const elementTop = reveal.getBoundingClientRect().top;
-                    if (elementTop < windowHeight - elementVisible) {
-                        reveal.classList.add('active');
-                    }
+                    if (elementTop < windowHeight - elementVisible) { reveal.classList.add('active'); }
                 });
             };
-
             window.addEventListener('scroll', revealOnScroll);
-            // Trigger once on load to show elements already in view
             revealOnScroll();
         });
 
-        // Mobile Menu Logic
         const btn = document.querySelector('button[aria-controls="mobile-menu"]');
         const menu = document.getElementById('mobile-menu');
         const icon = document.getElementById('menu-icon');
-
         btn.addEventListener('click', () => {
             menu.classList.toggle('hidden');
             if (menu.classList.contains('hidden')) {
@@ -1101,27 +945,20 @@
                 icon.classList.add('fa-times');
             }
         });
-
-        // Close menu when clicking a link
         function closeMobileMenu() {
             menu.classList.add('hidden');
             icon.classList.remove('fa-times');
             icon.classList.add('fa-bars');
         }
 
-        // Image Switcher Logic
         function changeImage(element, src, labelText) {
             const mainImg = document.getElementById('mainProductImage');
-            mainImg.style.opacity = '0'; // Fade out effect
-            
+            mainImg.style.opacity = '0';
             setTimeout(() => {
                 mainImg.src = src;
                 mainImg.style.opacity = '1';
             }, 200);
-
-            const label = document.getElementById('imageLabel');
-            label.textContent = labelText;
-
+            document.getElementById('imageLabel').textContent = labelText;
             const thumbnails = element.parentElement.children;
             for (let thumb of thumbnails) {
                 thumb.classList.remove('thumb-active', 'border-blue-500');
