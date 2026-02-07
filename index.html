@@ -138,6 +138,14 @@
         .animate-marquee-right:hover {
             animation-play-state: paused;
         }
+        @keyframes scroll-mouse {
+            0% { opacity: 0; transform: translate(-50%, 0); }
+            30% { opacity: 1; }
+            100% { opacity: 0; transform: translate(-50%, 15px); }
+        }
+        .animate-scroll-mouse {
+            animation: scroll-mouse 2s infinite;
+        }
     </style>
 </head>
 <body class="bg-slate-50 text-slate-800 antialiased">
@@ -221,15 +229,22 @@
             </p>
             
             <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in-up delay-300">
-                <a href="#products" class="px-8 py-4 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition shadow-lg shadow-blue-600/40 flex items-center justify-center gap-2 w-full sm:w-auto transform hover:-translate-y-1">
+                <a href="#products" class="px-8 py-4 bg-blue-600 text-white font-bold rounded-lg hover:bg-blue-700 transition shadow-lg shadow-blue-600/40 flex items-center justify-center gap-2 w-full sm:w-60 transform hover:-translate-y-1">
                     제품 디테일 보기 <i class="fas fa-search"></i>
                 </a>
-                <a href="#tech" class="px-8 py-4 border border-slate-500 text-slate-300 font-bold rounded-lg hover:bg-white hover:text-slate-900 transition flex items-center justify-center gap-2 backdrop-blur-sm w-full sm:w-auto">
+                <a href="#tech" class="px-8 py-4 border border-slate-500 text-slate-300 font-bold rounded-lg hover:bg-white hover:text-slate-900 transition flex items-center justify-center gap-2 backdrop-blur-sm w-full sm:w-60">
                     기술력 확인하기
                 </a>
             </div>
         </div>
-        
+        <div class="absolute bottom-10 left-0 w-full z-20 flex justify-center opacity-0 fade-in-up delay-300 pointer-events-none">
+            <div class="flex flex-col items-center gap-2 cursor-pointer group pointer-events-auto" onclick="document.getElementById('tech').scrollIntoView({behavior: 'smooth'})">
+                <span class="text-[10px] font-eng tracking-[0.2em] text-white/60 group-hover:text-blue-400 transition-colors uppercase font-bold">Scroll Down</span>
+                <div class="w-[26px] h-[42px] border-2 border-white/30 group-hover:border-blue-500/50 rounded-full relative transition-colors">
+                    <div class="w-1 h-2 bg-blue-500 rounded-full absolute top-2 left-1/2 -translate-x-1/2 animate-scroll-mouse"></div>
+                </div>
+            </div>
+        </div>
         <!-- Trust Indicators (Bottom Bar) -->
     </header>
 
