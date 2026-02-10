@@ -120,7 +120,7 @@
                             </div>
                             <div class="flex items-center gap-2 bg-white rounded-lg border border-slate-300 p-1">
                                 <button type="button" onclick="adjustCount(-1)" class="w-8 h-8 flex items-center justify-center text-slate-500 hover:bg-slate-100 rounded transition">-</button>
-                                <input type="number" id="productCount" value="1" min="1" class="w-12 text-center font-bold text-slate-900 outline-none" onchange="calculateTotal()">
+                                <input type="number" id="productCount" value="1" min="1" class="w-12 text-center font-bold text-slate-900 outline-none">
                                 <button type="button" onclick="adjustCount(1)" class="w-8 h-8 flex items-center justify-center text-slate-500 hover:bg-slate-100 rounded transition">+</button>
                             </div>
                         </div>
@@ -128,9 +128,9 @@
                         <!-- Simple Calculator Logic Visualization -->
                         <div class="flex justify-between items-center pt-4 border-t border-slate-200">
                             <span class="text-sm text-slate-500">예상 견적가 (VAT 별도)</span>
-                            <span class="text-xl font-black text-blue-600" id="totalPrice">견적 문의 후</span>
+                            <span class="text-xl font-black text-blue-600" id="totalPrice">견적 문의 후 확인 가능</span>
                         </div>
-                        <p class="text-xs text-slate-400 text-right mt-1">* 대량 구매 시 추가 할인이 적용될 수 있습니다.</p>
+                        <p class="text-xs text-slate-400 text-right mt-1">* 대량 구매 시 특별 단가가 적용될 수 있습니다.</p>
                     </div>
 
                     <div>
@@ -175,20 +175,12 @@
 
     <!-- Simple Script for Calculation -->
     <script>
-        const unitPrice = 350000; // Example price per unit
-
         function adjustCount(change) {
             const input = document.getElementById('productCount');
             let newValue = parseInt(input.value) + change;
             if (newValue < 1) newValue = 1;
             input.value = newValue;
-            calculateTotal();
-        }
-
-        function calculateTotal() {
-            const count = parseInt(document.getElementById('productCount').value);
-            const total = count * unitPrice;
-            document.getElementById('totalPrice').innerText = total.toLocaleString() + '원';
+            // 가격 계산 로직 제거됨
         }
     </script>
 
