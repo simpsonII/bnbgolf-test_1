@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://bnbgolf.co.kr/sitemap.xml
